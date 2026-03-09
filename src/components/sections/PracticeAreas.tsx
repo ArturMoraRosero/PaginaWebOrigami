@@ -106,6 +106,11 @@ export default function PracticeAreas() {
                   <p className="text-text font-sans leading-relaxed">
                     {service.body}
                   </p>
+                  {service.id === "02" && (
+                    <p className="mt-3 text-[13px] text-green font-medium">
+                      Para procesos de venta, fusión o atracción de inversión.
+                    </p>
+                  )}
                 </div>
 
               </div>

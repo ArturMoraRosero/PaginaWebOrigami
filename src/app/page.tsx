@@ -4,6 +4,7 @@ import Navigation from "@/components/ui/Navigation";
 import Hero from "@/components/sections/Hero";
 import ProblemSection from "@/components/sections/ProblemSection";
 import PracticeAreas from "@/components/sections/PracticeAreas";
+import BrandValuationSection from "@/components/sections/BrandValuationSection";
 import MethodologySection from "@/components/sections/MethodologySection";
 import StrategicCase from "@/components/sections/StrategicCase";
 import Distinctions from "@/components/sections/Distinctions";
@@ -26,6 +27,7 @@ export default function Home() {
         <Hero />
         <ProblemSection />
         <PracticeAreas />
+        <BrandValuationSection />
         <MethodologySection />
         <StrategicCase />
         <Distinctions />

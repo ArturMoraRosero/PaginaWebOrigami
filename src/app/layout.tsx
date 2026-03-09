@@ -17,7 +17,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Origami Consulting Group | Consultoría Estratégica Boutique en Ecuador",
   description: "Firma boutique de consultoría estratégica. Acompañamos a CEOs y alta dirección en expansión comercial, alianzas estratégicas y valoración de marca en Ecuador y Latinoamérica.",
-  keywords: "consultoría estratégica Ecuador, firma boutique estrategia, alianzas comerciales B2B, expansión empresarial Ecuador, consultor estratégico CEO, valoración de marca Ecuador, desarrollo de negocios Latinoamérica",
+  keywords: "consultoría estratégica Ecuador, firma boutique estrategia, alianzas comerciales B2B, expansión empresarial Ecuador, consultor estratégico CEO, valoración de marca Ecuador, desarrollo de negocios Latinoamérica, cuánto vale mi marca, valor de marca para inversores, venta de empresa Ecuador, brand equity Ecuador, valoración empresarial para inversión, atraer inversores Ecuador, valor intangible de marca",
 };
 
 export default function RootLayout({
