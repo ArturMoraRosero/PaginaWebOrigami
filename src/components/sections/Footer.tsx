@@ -14,8 +14,8 @@ export default function Footer() {
             height={80} 
             className="h-16 md:h-20 w-auto object-contain mb-8" 
           />
-          <p className="font-sans text-white/50 text-sm max-w-sm mb-8">
-            Estrategia & Valor. Consultoría empresarial basada en Ecuador, comprometida con el impacto.
+          <p className="font-sans text-white/50 text-sm max-w-sm">
+            Estrategia & Valor. Consultoría empresarial, comprometida con el impacto. Quito-Ecuador
           </p>
           <div className="font-sans text-sm text-white/70 space-y-2">
             <p className="hover:text-accent-green transition-colors cursor-pointer w-fit">oriconsultoria.com</p>
