@@ -30,7 +30,15 @@ export default function Footer() {
             <a href="#" className="hover:text-white transition-colors w-fit">Servicios</a>
             <a href="#" className="hover:text-white transition-colors w-fit">Metodología</a>
             <a href="#" className="hover:text-white transition-colors w-fit">Sobre nosotros</a>
-            <a href="#" className="hover:text-white transition-colors w-fit">Contacto</a>
+            <a href="#contacto" className="hover:text-white transition-colors w-fit">Contacto</a>
+            <a 
+              href="https://www.linkedin.com/company/origami-consulting-group-sas/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-green transition-colors w-fit flex items-center gap-2 mt-2 pt-2 border-t border-white/10"
+            >
+              LinkedIn ↗
+            </a>
           </nav>
         </div>
 
