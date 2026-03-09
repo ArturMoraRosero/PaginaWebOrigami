@@ -52,7 +52,7 @@ export default function Navigation() {
           <a href="#" className="flex items-center gap-2 group interactive" onClick={(e) => { e.preventDefault(); window.scrollTo({top: 0, behavior:"smooth"})}}>
             <Image 
               src="/logotipo-origami-horizontal.png" 
-              alt="Origami Corporate Logo" 
+              alt="Origami Consulting Group Logo - Consultoría Estratégica en Ecuador" 
               width={260} 
               height={70} 
               className="h-12 md:h-14 w-auto object-contain transition-transform duration-500 group-hover:scale-105"

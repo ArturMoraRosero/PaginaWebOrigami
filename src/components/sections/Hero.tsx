@@ -14,7 +14,7 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   const headlineLines = [
-    "Estructuramos crecimiento",
+    "Consultoría estratégica",
     "para empresas que",
     "deciden evolucionar.",
   ];

@@ -9,7 +9,7 @@ export default function Footer() {
         <div>
           <Image 
             src="/logotipo-origami-horizontal.png" 
-            alt="Origami Consulting" 
+            alt="Origami Consulting Group - Firma Boutique de Estrategia B2B" 
             width={320} 
             height={80} 
             className="h-16 md:h-20 w-auto object-contain mb-8" 
