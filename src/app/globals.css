@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy: #1A2E5A;
+  --color-blue: #1E3D7A;
+  --color-green: #7DC242;
+  --color-green-dk: #5A9E2F;
+  --color-text: #4A4A4A;
+  --color-surface: #F4F6FB;
+  --color-white: #FFFFFF;
+  --color-background: var(--color-surface);
+  --color-foreground: var(--color-navy);
+
+  --font-syne: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui;
+}
+
+@layer base {
+  :root {
+    --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: cubic-bezier(0.4, 0, 0.2, 1);
+    --space-section: clamp(80px, 12vw, 160px);
+    --radius-card: 16px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    @apply antialiased overflow-x-hidden;
+    /* Desktop only hide real cursor when not inside an iframe etc. Usually done via JS or class */
+  }
+
+  /* Custom interactions */
+  ::selection {
+    background-color: var(--color-green);
+    color: var(--color-white);
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility glass {
+  background: rgba(26, 46, 90, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
