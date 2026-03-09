@@ -15,6 +15,12 @@ const CASES_DATA = [
     category: "EXPANSIÓN COMERCIAL & ACTIVACIÓN",
     title: "UMCO",
     description: "Estructuración de alianzas comerciales con los principales métodos de pago del Ecuador y diseño de campañas de activación en puntos de venta para incrementar volumen de ventas y visibilidad de marca."
+  },
+  {
+    id: "03",
+    category: "EXPANSIÓN B2B & DESARROLLO COMERCIAL",
+    title: "HEDGEHOG BRAND",
+    description: "Identificación y desarrollo de nuevos canales de venta B2B y estructuración de alianzas comerciales estratégicas para expandir el alcance de la marca hacia mercados y socios de alto valor."
   }
 ];
 
@@ -95,7 +101,7 @@ export default function StrategicCase() {
                   className="w-full h-full max-w-[300px] text-white opacity-80 transition-transform duration-1000 group-hover:scale-110 group-hover:rotate-3"
                 >
                   {/* Origami/Geometric Abstract Folded Shape */}
-                  {index % 2 === 0 ? (
+                  {index % 3 === 0 ? (
                     // Graphic for KIYU
                     <>
                       <polygon points="100,20 180,80 140,180 60,180 20,80" fill="transparent" stroke="currentColor" strokeWidth="1" className="opacity-30 animate-[spin_40s_linear_infinite]" />
@@ -109,7 +115,7 @@ export default function StrategicCase() {
                         <polygon points="70,160 130,160 100,105" fill="currentColor" className="opacity-20" />
                       </g>
                     </>
-                  ) : (
+                  ) : index % 3 === 1 ? (
                     // Graphic for UMCO
                     <>
                       <circle cx="100" cy="100" r="80" fill="transparent" stroke="currentColor" strokeWidth="1" className="opacity-30 animate-[spin_30s_linear_infinite]" />
@@ -120,6 +126,20 @@ export default function StrategicCase() {
                         <polygon points="170,100 100,170 100,100" fill="#7DC242" className="opacity-60" />
                         <polygon points="100,170 30,100 100,100" fill="#5A9E2F" className="opacity-40" />
                         <polygon points="30,100 100,30 100,100" fill="currentColor" className="opacity-30" />
+                      </g>
+                    </>
+                  ) : (
+                    // Graphic for HEDGEHOG
+                    <>
+                      <polygon points="100,5 195,50 195,150 100,195 5,150 5,50" fill="transparent" stroke="currentColor" strokeWidth="1" className="opacity-30 animate-[spin_60s_linear_infinite]" />
+                      <g className="transition-all duration-700 ease-in-out origin-center">
+                        <polygon points="100,20 180,65 180,135 100,180 20,135 20,65" fill="currentColor" className="opacity-10 group-hover:opacity-20 transition-opacity duration-500" />
+                        <polygon points="100,20 180,65 100,100" fill="currentColor" className="opacity-40" />
+                        <polygon points="180,65 180,135 100,100" fill="#7DC242" className="opacity-60" />
+                        <polygon points="180,135 100,180 100,100" fill="#5A9E2F" className="opacity-50" />
+                        <polygon points="100,180 20,135 100,100" fill="currentColor" className="opacity-20" />
+                        <polygon points="20,135 20,65 100,100" fill="#7DC242" className="opacity-30" />
+                        <polygon points="20,65 100,20 100,100" fill="currentColor" className="opacity-30" />
                       </g>
                     </>
                   )}
