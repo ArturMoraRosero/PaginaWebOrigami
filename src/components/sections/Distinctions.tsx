@@ -18,7 +18,7 @@ export default function Distinctions() {
   return (
     <section 
       ref={sectionRef}
-      className="py-24 md:py-32 bg-surface overflow-hidden relative"
+      className="py-24 md:py-32 bg-[#0A1628] overflow-hidden relative"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
@@ -29,7 +29,7 @@ export default function Distinctions() {
               initial={{ opacity: 0, x: -40 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="font-syne font-bold text-4xl md:text-5xl lg:text-6xl text-navy leading-[1.1]"
+              className="font-syne font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.1]"
             >
               Lo que nos<br/>
               <span className="text-green relative inline-block mt-2">
@@ -52,7 +52,7 @@ export default function Distinctions() {
                 initial={{ opacity: 0, x: 40 }}
                 animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
                 transition={{ duration: 0.6, delay: 0.1 * index, ease: "easeOut" }}
-                className="group flex items-center gap-6 py-6 border-b border-navy/10 relative hover:bg-navy/[0.02] transition-colors duration-300 interactive px-4 -mx-4 rounded-xl cursor-default"
+                className="group flex items-center gap-6 py-6 border-b border-white/10 relative hover:bg-white/[0.03] transition-colors duration-300 interactive px-4 -mx-4 rounded-xl cursor-default"
               >
                 {/* Custom Checkmark Icon */}
                 <div className="w-8 h-8 rounded-full bg-green/10 flex items-center justify-center shrink-0 group-hover:bg-green group-hover:scale-110 transition-all duration-300">
@@ -61,7 +61,7 @@ export default function Distinctions() {
                   </svg>
                 </div>
 
-                <span className="font-sans text-xl md:text-2xl text-navy font-medium tracking-tight group-hover:text-green-dk transition-colors duration-300">
+                <span className="font-sans text-xl md:text-2xl text-white/80 font-medium tracking-tight group-hover:text-green transition-colors duration-300">
                   {item}
                 </span>
 
