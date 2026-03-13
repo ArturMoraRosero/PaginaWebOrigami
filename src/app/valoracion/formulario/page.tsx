@@ -78,8 +78,6 @@ export default function FormularioPage() {
       setIsSending(false);
     }
   };
-Line:
-
   const renderCurrentStep = () => {
     switch (currentStep) {
       case 1:
