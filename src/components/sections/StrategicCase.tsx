@@ -2,31 +2,17 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-
-const CASES_DATA = [
-  {
-    id: "01",
-    category: "Valoración Estratégica de Marca",
-    title: "KIYÚ",
-    description: "Redefinición del posicionamiento corporativo y estructuración de la propuesta de valor para maximizar el equity brand en el mercado regional."
-  },
-  {
-    id: "02",
-    category: "EXPANSIÓN COMERCIAL & ACTIVACIÓN",
-    title: "UMCO",
-    description: "Estructuración de alianzas comerciales con los principales métodos de pago del Ecuador y diseño de campañas de activación en puntos de venta para incrementar volumen de ventas y visibilidad de marca."
-  },
-  {
-    id: "03",
-    category: "EXPANSIÓN B2B & DESARROLLO COMERCIAL",
-    title: "HEDGEHOG BRAND",
-    description: "Identificación y desarrollo de nuevos canales de venta B2B y estructuración de alianzas comerciales estratégicas para expandir el alcance de la marca hacia mercados y socios de alto valor."
-  }
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function StrategicCase() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
+  const { t } = useLanguage();
+
+  const CASES_DATA = t.cases.items.map((item, index) => ({
+    id: `0${index + 1}`,
+    ...item
+  }));
 
   return (
     <section 
@@ -44,10 +30,10 @@ export default function StrategicCase() {
           transition={{ duration: 0.8 }}
         >
           <span className="text-green font-syne font-bold uppercase tracking-widest text-sm mb-4 block">
-            Casos Estratégicos
+            {t.cases.tag}
           </span>
           <h2 className="font-syne font-bold text-3xl md:text-5xl lg:text-5xl text-navy max-w-3xl leading-tight">
-            Experiencias reales donde la estrategia se convierte en valor.
+            {t.cases.title}
           </h2>
         </motion.div>
 
@@ -82,7 +68,7 @@ export default function StrategicCase() {
                   </p>
                   
                   <a href="#contacto" className="inline-flex items-center gap-2 font-syne font-bold text-green tracking-wide group/link">
-                    Ver caso completo
+                    {t.cases.viewCase}
                     <span className="transform transition-transform group-hover/link:translate-x-1">→</span>
                     {/* Underline animation */}
                     <span className="absolute -bottom-1 left-0 w-0 h-px bg-green transition-all duration-300 group-hover/link:w-full" />

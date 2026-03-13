@@ -1,6 +1,10 @@
+"use client";
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-navy text-white py-20 px-6 relative z-10 w-full">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
@@ -15,8 +19,8 @@ export default function Footer() {
             className="h-16 md:h-20 w-auto object-contain mb-8" 
           />
           <p className="font-sans text-white/50 text-sm max-w-sm mb-6">
-            Estrategia & Valor. Consultoría empresarial, comprometida con el impacto.<br/>
-            Quito - Ecuador
+            {t.footer.description}<br/>
+            {t.footer.city}
           </p>
           <div className="font-sans text-sm text-white/70 space-y-2">
             <p className="hover:text-accent-green transition-colors cursor-pointer w-fit">www.oriconsultoria.com</p>
@@ -27,11 +31,11 @@ export default function Footer() {
         {/* Links */}
         <div className="flex flex-col md:flex-row md:justify-end gap-x-16 gap-y-6">
           <nav className="flex flex-col space-y-5 font-sans text-white/70">
-            <a href="#" className="hover:text-white transition-colors w-fit">Servicios</a>
-            <a href="#" className="hover:text-white transition-colors w-fit">Metodología</a>
-            <a href="#" className="hover:text-white transition-colors w-fit">Sobre nosotros</a>
-            <a href="/valoracion" className="hover:text-white transition-colors w-fit">Valoración Clientes</a>
-            <a href="#contacto" className="hover:text-white transition-colors w-fit">Contacto</a>
+            <a href="#practica" className="hover:text-white transition-colors w-fit">{t.footer.links.services}</a>
+            <a href="#modelo" className="hover:text-white transition-colors w-fit">{t.footer.links.methodology}</a>
+            <a href="#contacto" className="hover:text-white transition-colors w-fit">{t.footer.links.about}</a>
+            <a href="/valoracion" className="hover:text-white transition-colors w-fit">{t.footer.links.valuation}</a>
+            <a href="#contacto" className="hover:text-white transition-colors w-fit">{t.footer.links.contact}</a>
             <a 
               href="https://www.linkedin.com/company/origami-consulting-group-sas/" 
               target="_blank" 

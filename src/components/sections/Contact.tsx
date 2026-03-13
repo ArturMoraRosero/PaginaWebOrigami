@@ -2,10 +2,12 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Contact() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+  const { t } = useLanguage();
 
   const [formState, setFormState] = useState({
     name: "",
@@ -57,12 +59,12 @@ export default function Contact() {
         if(data.success) {
           setShowSuccess(true);
         } else {
-          alert("Hubo un error al enviar el mensaje. Por favor intente más tarde.");
+          alert(t.contact.form.errorSend);
         }
     })
     .catch(error => {
         setIsSubmitting(false);
-        alert("Hubo un error de conexión. Por favor intente más tarde.");
+        alert(t.contact.form.errorConn);
     });
   };
 
@@ -90,13 +92,13 @@ export default function Contact() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="text-green font-syne font-bold uppercase tracking-widest text-sm mb-4 block">
-            Contacto
+            {t.contact.tag}
           </span>
           <h2 className="font-syne font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight">
-            Iniciar una conversación estratégica
+            {t.contact.title}
           </h2>
           <p className="font-sans text-white/70 text-lg leading-relaxed max-w-md">
-            El primer paso para estructurar crecimiento sustancial. Comparta los desafíos actuales de su organización y nuestro equipo directivo se pondrá en contacto.
+            {t.contact.description}
           </p>
           
           <div className="mt-12 lg:mt-16 space-y-6">
@@ -130,16 +132,16 @@ export default function Contact() {
                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
                   </svg>
                 </div>
-                <h3 className="text-2xl font-syne font-bold text-white mb-3">Mensaje enviado</h3>
+                <h3 className="text-2xl font-syne font-bold text-white mb-3">{t.contact.successTitle}</h3>
                 <p className="text-white/70 font-sans">
-                  Nos pondremos en contacto con usted a la brevedad posible.
+                  {t.contact.successMessage}
                 </p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-6" noValidate>
                 
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="name" className="text-sm font-sans text-white/60 ml-2">Nombre completo</label>
+                  <label htmlFor="name" className="text-sm font-sans text-white/60 ml-2">{t.contact.form.name}</label>
                   <input 
                     type="text" 
                     id="name"
@@ -147,12 +149,12 @@ export default function Contact() {
                     value={formState.name}
                     onChange={handleChange}
                     className={`w-full bg-navy/40 border ${errors.name ? 'border-red-500/50 animate-[shake_0.5s_ease-in-out]' : 'border-white/10'} rounded-xl px-4 py-4 text-white placeholder-white/20 focus:outline-none focus:border-green focus:bg-white/5 transition-all interactive`}
-                    placeholder="Ej. María Pérez"
+                    placeholder={t.contact.form.namePlaceholder}
                   />
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="company" className="text-sm font-sans text-white/60 ml-2">Empresa</label>
+                  <label htmlFor="company" className="text-sm font-sans text-white/60 ml-2">{t.contact.form.company}</label>
                   <input 
                     type="text" 
                     id="company"
@@ -160,12 +162,12 @@ export default function Contact() {
                     value={formState.company}
                     onChange={handleChange}
                     className={`w-full bg-navy/40 border ${errors.company ? 'border-red-500/50 animate-[shake_0.5s_ease-in-out]' : 'border-white/10'} rounded-xl px-4 py-4 text-white placeholder-white/20 focus:outline-none focus:border-green focus:bg-white/5 transition-all interactive`}
-                    placeholder="Ej. Corporación ABC"
+                    placeholder={t.contact.form.companyPlaceholder}
                   />
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="email" className="text-sm font-sans text-white/60 ml-2">Email corporativo</label>
+                  <label htmlFor="email" className="text-sm font-sans text-white/60 ml-2">{t.contact.form.email}</label>
                   <input 
                     type="email" 
                     id="email"
@@ -173,19 +175,19 @@ export default function Contact() {
                     value={formState.email}
                     onChange={handleChange}
                     className={`w-full bg-navy/40 border ${errors.email ? 'border-red-500/50 animate-[shake_0.5s_ease-in-out]' : 'border-white/10'} rounded-xl px-4 py-4 text-white placeholder-white/20 focus:outline-none focus:border-green focus:bg-white/5 transition-all interactive`}
-                    placeholder="maria@empresa.com"
+                    placeholder="ejemplo@empresa.com"
                   />
                 </div>
 
                 <div className="flex flex-col gap-2 mb-2">
-                  <label htmlFor="message" className="text-sm font-sans text-white/60 ml-2">Desafío estratégico (breve descripcion)</label>
+                  <label htmlFor="message" className="text-sm font-sans text-white/60 ml-2">{t.contact.form.message}</label>
                   <textarea 
                     id="message"
                     name="message"
                     value={formState.message}
                     onChange={handleChange}
                     className={`w-full min-h-[120px] resize-none bg-navy/40 border ${errors.message ? 'border-red-500/50 animate-[shake_0.5s_ease-in-out]' : 'border-white/10'} rounded-xl px-4 py-4 text-white placeholder-white/20 focus:outline-none focus:border-green focus:bg-white/5 transition-all interactive`}
-                    placeholder="¿En qué podemos ayudarle a estructurar su crecimiento?"
+                    placeholder={t.contact.form.messagePlaceholder}
                   />
                 </div>
 
@@ -201,10 +203,10 @@ export default function Contact() {
                         transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                         className="w-5 h-5 border-2 border-navy border-t-transparent rounded-full"
                       />
-                      Enviando...
+                      {t.contact.form.submitting}
                     </span>
                   ) : (
-                    "Enviar mensaje"
+                    t.contact.form.submit
                   )}
                 </button>
               </form>

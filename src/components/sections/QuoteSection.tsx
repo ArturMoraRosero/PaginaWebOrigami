@@ -2,13 +2,15 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function QuoteSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.5 });
+  const { t } = useLanguage();
 
-  const line1 = "Trabajamos con empresas que no buscan un consultor.".split(" ");
-  const line2 = "Buscan un socio estratégico de alto nivel.".split(" ");
+  const line1 = t.quote.line1.split(" ");
+  const line2 = t.quote.line2.split(" ");
 
   return (
     <section 

@@ -3,18 +3,20 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const navLinks = [
-    { name: "Práctica", href: "/#practica" },
-    { name: "Modelo", href: "/#modelo" },
-    { name: "Casos", href: "/#casos" },
-    { name: "Insights", href: "/#insights" },
-    { name: "Valoración Clientes", href: "/valoracion" },
+    { name: t.nav.practice, href: "/#practica" },
+    { name: t.nav.model, href: "/#modelo" },
+    { name: t.nav.cases, href: "/#casos" },
+    { name: t.nav.insights, href: "/#insights" },
+    { name: t.nav.valuation, href: "/valoracion" },
   ];
 
   useEffect(() => {
@@ -97,14 +99,32 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Desktop CTA & Mobile Toggle */}
+          {/* Desktop CTA & Language Toggle */}
           <div className="flex items-center gap-4">
+            
+            {/* Language Toggle */}
+            <div className="hidden md:flex items-center gap-2 bg-white/5 rounded-full px-3 py-1.5 border border-white/10">
+              <button 
+                onClick={() => setLanguage('es')}
+                className={`text-xs font-bold transition-colors interactive ${language === 'es' ? 'text-green' : 'text-white/50 hover:text-white'}`}
+              >
+                ES
+              </button>
+              <span className="text-white/20 text-xs">|</span>
+              <button 
+                onClick={() => setLanguage('en')}
+                className={`text-xs font-bold transition-colors interactive ${language === 'en' ? 'text-green' : 'text-white/50 hover:text-white'}`}
+              >
+                EN
+              </button>
+            </div>
+
             <a
               href="/#contacto"
               onClick={(e) => handleNavClick(e, "/#contacto")}
               className="hidden md:inline-flex bg-green text-navy px-5 py-2 rounded-full font-bold text-sm tracking-wide hover:scale-105 hover:shadow-[0_0_15px_rgba(125,194,66,0.4)] transition-all duration-300 interactive"
             >
-              Iniciar conversación
+              {t.nav.start}
             </a>
             <button
               className="md:hidden text-white interactive"
@@ -146,12 +166,30 @@ export default function Navigation() {
                   {link.name}
                 </a>
               ))}
+              
+              {/* Mobile Language Toggle */}
+              <div className="flex items-center gap-4 mt-2">
+                <button 
+                  onClick={() => { setLanguage('es'); setIsMobileMenuOpen(false); }}
+                  className={`text-lg font-bold transition-colors interactive ${language === 'es' ? 'text-green' : 'text-white/50'}`}
+                >
+                  ES
+                </button>
+                <span className="text-white/20 text-lg">|</span>
+                <button 
+                  onClick={() => { setLanguage('en'); setIsMobileMenuOpen(false); }}
+                  className={`text-lg font-bold transition-colors interactive ${language === 'en' ? 'text-green' : 'text-white/50'}`}
+                >
+                  EN
+                </button>
+              </div>
+
               <a
                 href="/#contacto"
                 onClick={(e) => handleNavClick(e, "/#contacto")}
                 className="mt-4 bg-green text-navy px-8 py-4 rounded-full font-bold text-lg tracking-wide interactive"
               >
-                Iniciar conversación
+                {t.nav.start}
               </a>
             </div>
           </motion.div>

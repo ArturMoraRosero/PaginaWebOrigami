@@ -3,11 +3,13 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function InsightsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   const [loading, setLoading] = useState(true);
+  const { t } = useLanguage();
 
   // Simulate loading internal data for skeleton effect
   useEffect(() => {
@@ -17,23 +19,10 @@ export default function InsightsSection() {
     return () => clearTimeout(timer);
   }, []);
 
-  const articles = [
-    {
-      id: 1,
-      tag: "Crecimiento Comercial",
-      title: "Cómo estructurar crecimiento comercial sostenible"
-    },
-    {
-      id: 2,
-      tag: "Posicionamiento",
-      title: "Cuándo valorar estratégicamente una marca"
-    },
-    {
-      id: 3,
-      tag: "Alianzas",
-      title: "El rol de las alianzas estratégicas en la expansión empresarial"
-    }
-  ];
+  const articles = t.insights.items.map((item, index) => ({
+    id: index + 1,
+    ...item
+  }));
 
   return (
     <section 
@@ -51,10 +40,10 @@ export default function InsightsSection() {
           transition={{ duration: 0.8 }}
         >
           <span className="text-green font-syne font-bold uppercase tracking-widest text-sm mb-4 block">
-            Insights Estratégicos
+            {t.insights.tag}
           </span>
           <h2 className="font-syne font-bold text-3xl md:text-5xl text-navy max-w-3xl leading-tight">
-            Perspectivas para liderar.
+            {t.insights.title}
           </h2>
         </motion.div>
 

@@ -4,8 +4,10 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import OrigamiGiraffe from "@/components/ui/OrigamiGiraffe";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -15,11 +17,7 @@ export default function Hero() {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
-  const headlineLines = [
-    "Consultoría estratégica",
-    "para empresas que",
-    "deciden evolucionar.",
-  ];
+  const headlineLines = t.hero.headline;
 
   return (
     <section
@@ -54,7 +52,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="mb-6 font-syne font-bold text-green/90 tracking-[0.2em] uppercase text-sm"
           >
-            Firma boutique de consultoría estratégica
+            {t.hero.tag}
           </motion.div>
 
           <h1 className="font-syne font-bold text-[clamp(24px,8.5vw,96px)] md:text-[clamp(44px,6vw,96px)] leading-[1.1] text-white mb-10 tracking-tight">
@@ -71,7 +69,10 @@ export default function Hero() {
                 >
                   {i === 2 ? (
                     <span>
-                      deciden <span className="bg-gradient-to-r from-white to-green bg-clip-text text-transparent">evolucionar.</span>
+                      {line.replace(t.hero.headlineHighlight, "").trim()}{" "}
+                      <span className="bg-gradient-to-r from-white to-green bg-clip-text text-transparent">
+                        {t.hero.headlineHighlight}
+                      </span>
                     </span>
                   ) : (
                     line
@@ -87,9 +88,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg md:text-xl text-white/80 font-sans leading-relaxed mb-12 max-w-[600px] mx-auto lg:mx-0"
           >
-            Acompañamos a CEOs y alta dirección en procesos de expansión, posicionamiento y alianzas estratégicas de alto valor.
+            {t.hero.description}
             <br /><br />
-            <strong className="font-semibold text-green/90 italic">No improvisamos crecimiento. Lo estructuramos.</strong>
+            <strong className="font-semibold text-green/90 italic">{t.hero.quote}</strong>
           </motion.p>
 
           <motion.div
@@ -102,13 +103,13 @@ export default function Hero() {
               href="#contacto"
               className="bg-green text-navy px-9 py-4 rounded-full font-bold tracking-wide hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(125,194,66,0.3)] transition-all duration-300 text-center interactive"
             >
-              Iniciar conversación
+              {t.hero.ctaStart}
             </a>
             <a
               href="#practica"
               className="bg-transparent text-white border border-white/30 px-9 py-4 rounded-full font-medium hover:border-green hover:text-green transition-all duration-300 text-center interactive"
             >
-              Ver servicios
+              {t.hero.ctaServices}
             </a>
           </motion.div>
         </div>
@@ -133,7 +134,7 @@ export default function Hero() {
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 pointer-events-none"
         style={{ opacity }}
       >
-        <span className="text-white/40 text-xs tracking-widest uppercase font-syne">Scroll</span>
+        <span className="text-white/40 text-xs tracking-widest uppercase font-syne">{t.hero.scroll}</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}

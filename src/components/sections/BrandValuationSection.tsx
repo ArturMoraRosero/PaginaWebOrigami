@@ -3,10 +3,12 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function BrandValuationSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
+  const { t } = useLanguage();
 
   return (
     <section 
@@ -24,19 +26,15 @@ export default function BrandValuationSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h2 className="font-syne font-bold text-3xl md:text-5xl text-navy mb-6 leading-tight">
-              ¿Cuánto vale realmente su marca?
+              {t.valuation.title}
             </h2>
             
             <p className="font-sans text-lg md:text-xl text-text leading-relaxed mb-8">
-              Determinamos el valor estratégico de su empresa con metodología ejecutiva para que pueda vender, fusionarse o atraer inversores desde una posición de fortaleza y con respaldo técnico.
+              {t.valuation.description}
             </p>
 
             <ul className="space-y-4 mb-10">
-              {[
-                "Valoración para venta de empresa",
-                "Presentación ante inversionistas",
-                "Estructuración de alianzas y fusiones"
-              ].map((item, index) => (
+              {t.valuation.items.map((item, index) => (
                 <li key={index} className="flex items-start gap-4">
                   <CheckCircle2 className="w-6 h-6 text-green shrink-0 mt-0.5" />
                   <span className="font-sans font-medium text-navy/80">{item}</span>
@@ -48,7 +46,7 @@ export default function BrandValuationSection() {
               href="#contacto"
               className="inline-flex bg-green text-navy px-8 py-4 rounded-full font-bold tracking-wide hover:scale-[1.02] hover:shadow-[0_4px_14px_rgba(125,194,66,0.3)] transition-all duration-300 interactive"
             >
-              Iniciar valoración →
+              {t.valuation.cta}
             </a>
           </motion.div>
 

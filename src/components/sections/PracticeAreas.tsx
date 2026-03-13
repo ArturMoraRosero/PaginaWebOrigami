@@ -3,41 +3,20 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Network, Gem, TrendingUp, Zap } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function PracticeAreas() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.15 });
+  const { t } = useLanguage();
 
-  const services = [
-    {
-      id: "01",
-      tag: "Expansión & Mercado",
-      title: "Arquitectura de Alianzas Estratégicas",
-      body: "Diseñamos y estructuramos alianzas que abren nuevos mercados y fuentes de valor.",
-      icon: Network,
-    },
-    {
-      id: "02",
-      tag: "Posicionamiento",
-      title: "Valoración Estratégica de Marca",
-      body: "Incrementamos el valor percibido de su organización.",
-      icon: Gem,
-    },
-    {
-      id: "03",
-      tag: "Modelo Comercial",
-      title: "Estructuración de Crecimiento Comercial",
-      body: "Alineamos el modelo comercial con una visión de expansión sostenible.",
-      icon: TrendingUp,
-    },
-    {
-      id: "04",
-      tag: "Activación",
-      title: "Desarrollo Estratégico de Negocios",
-      body: "Activamos oportunidades y conexiones clave de alto impacto.",
-      icon: Zap,
-    },
-  ];
+  const servicesIcons = [Network, Gem, TrendingUp, Zap];
+
+  const services = t.practice.services.map((service, index) => ({
+    id: `0${index + 1}`,
+    ...service,
+    icon: servicesIcons[index],
+  }));
 
   return (
     <section 
@@ -55,12 +34,12 @@ export default function PracticeAreas() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="text-green font-syne font-bold uppercase tracking-widest text-sm mb-4 block">
-            Servicios
+            {t.practice.tag}
           </span>
           <h2 className="font-syne font-bold text-3xl md:text-5xl lg:text-6xl text-navy max-w-3xl leading-tight">
-            No solo diseñamos estrategia.
+            {t.practice.title[0]}
             <br />
-            Creamos valor estructurado.
+            {t.practice.title[1]}
           </h2>
         </motion.div>
 
@@ -108,7 +87,7 @@ export default function PracticeAreas() {
                   </p>
                   {service.id === "02" && (
                     <p className="mt-3 text-[13px] text-green font-medium">
-                      Para procesos de venta, fusión o atracción de inversión.
+                      {t.practice.valuationNote}
                     </p>
                   )}
                 </div>

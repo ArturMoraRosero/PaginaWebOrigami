@@ -2,12 +2,14 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function MethodologySection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   const [activeStep, setActiveStep] = useState<number | null>(null);
+  const { t } = useLanguage();
 
   // Line drawing animation connected to scroll
   const { scrollYProgress } = useScroll({
@@ -17,13 +19,7 @@ export default function MethodologySection() {
   
   const pathLength = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
-  const steps = [
-    { title: "Diagnóstico Ejecutivo", desc: "Análisis profundo de la situación actual y potencial de crecimiento." },
-    { title: "Arquitectura de Crecimiento", desc: "Diseño de la estructura estratégica y definición del roadmap de valor." },
-    { title: "Conexión Estratégica", desc: "Vinculación con aliados clave y recursos esenciales para la ejecución." },
-    { title: "Acompañamiento Directivo", desc: "Guía gerencial durante la implementación de la estrategia trazada." },
-    { title: "Optimización y Escalabilidad", desc: "Ajuste de procesos para asegurar crecimiento sostenible a largo plazo." },
-  ];
+  const steps = t.methodology.steps;
 
   return (
     <section 
@@ -41,9 +37,9 @@ export default function MethodologySection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="font-syne font-bold text-3xl md:text-5xl lg:text-6xl mb-4 text-white">
-            Modelo de Activación Estratégica
+            {t.methodology.title}
           </h2>
-          <p className="font-sans text-xl text-green md:ml-2">en 5 etapas</p>
+          <p className="font-sans text-xl text-green md:ml-2">{t.methodology.subtitle}</p>
         </motion.div>
 
         {/* Timeline Container */}

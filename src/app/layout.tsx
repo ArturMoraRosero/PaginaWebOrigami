@@ -3,6 +3,7 @@ import { Syne, Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScrolling from "@/components/SmoothScrolling";
 import CustomCursor from "@/components/ui/CustomCursor";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const syne = Syne({
   variable: "--font-syne", 
@@ -71,8 +72,10 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body className={`${syne.variable} ${inter.variable} font-sans`}>
-        <CustomCursor />
-        <SmoothScrolling>{children}</SmoothScrolling>
+        <LanguageProvider>
+          <CustomCursor />
+          <SmoothScrolling>{children}</SmoothScrolling>
+        </LanguageProvider>
       </body>
     </html>
   );

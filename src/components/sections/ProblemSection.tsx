@@ -1,6 +1,7 @@
 "use client";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const problems = [
   "Falta de claridad estratégica",
@@ -12,6 +13,7 @@ const problems = [
 export default function ProblemSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-20%" });
+  const { t } = useLanguage();
 
   return (
     <section className="min-h-screen py-32 px-6 flex flex-col justify-center relative z-10 pointer-events-none">
@@ -25,13 +27,13 @@ export default function ProblemSection() {
           className="flex flex-col justify-center"
         >
           <h2 className="font-agrandir text-4xl md:text-5xl lg:text-6xl font-bold text-primary-blue leading-tight mb-8">
-            Los desafíos estratégicos de las organizaciones
+            {t.problem.title}
           </h2>
           <div className="w-20 h-2 bg-accent-green rounded-full mb-8" />
         </motion.div>
 
         <div className="flex flex-col justify-center space-y-6">
-          {problems.map((problem, idx) => (
+          {t.problem.items.map((problem, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, x: 50 }}

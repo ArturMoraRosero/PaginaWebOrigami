@@ -2,18 +2,14 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Distinctions() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
+  const { t } = useLanguage();
 
-  const items = [
-    "Firma boutique — atención de primer nivel",
-    "Relación directa con alta dirección",
-    "Confidencialidad absoluta",
-    "Resultados sostenibles",
-    "Integración estratégica profunda"
-  ];
+  const items = t.distinctions.items;
 
   return (
     <section 
@@ -31,9 +27,9 @@ export default function Distinctions() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="font-syne font-bold text-4xl md:text-5xl lg:text-6xl text-white leading-[1.1]"
             >
-              Lo que nos<br/>
+              {t.distinctions.titleLine1}<br/>
               <span className="text-green relative inline-block mt-2">
-                distingue
+                {t.distinctions.titleLine2}
                 <motion.span 
                   className="absolute bottom-1 left-0 w-full h-2 bg-green/20 -z-10"
                   initial={{ width: 0 }}
