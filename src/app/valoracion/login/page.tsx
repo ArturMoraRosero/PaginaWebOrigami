@@ -112,7 +112,7 @@ export default function LoginPage() {
             </form>
 
             <p className="mt-8 text-center text-xs text-text/40 font-sans">
-              Si no tiene credenciales, contacte a su consultor estratégico.
+              Si no tiene credenciales, <Link href="/#contacto" className="text-green font-bold hover:underline">contacte a su consultor estratégico</Link>.
             </p>
           </div>
         </motion.div>
