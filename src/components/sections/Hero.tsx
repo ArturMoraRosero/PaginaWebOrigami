@@ -3,6 +3,8 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
+import OrigamiGiraffe from "@/components/ui/OrigamiGiraffe";
+
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -20,31 +22,32 @@ export default function Hero() {
   ];
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="relative min-h-screen w-full flex items-center bg-[radial-gradient(circle_at_center,#1E3D7A,#0D1B35)] overflow-hidden pt-36 md:pt-40"
     >
       {/* 1. Animated Geometric Background & Noise */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 z-0 pointer-events-none"
         style={{ y: backgroundY, opacity }}
       >
         <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-[0.03] mix-blend-overlay"></div>
-        
+
         {/* Abstract Polygons */}
         <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] border border-white/5 rounded-full animate-[spin_120s_linear_infinite]" />
         <div className="absolute bottom-[-10%] left-[-10%] w-[800px] h-[800px] border border-green/5 rounded-full animate-[spin_90s_linear_infinite_reverse]" />
-        
+
         {/* SVG Polygon Shape */}
         <svg className="absolute top-[20%] right-[10%] w-[400px] h-[400px] text-white/[0.04] animate-[spin_60s_linear_infinite]" viewBox="0 0 100 100">
-          <polygon points="50,0 100,25 100,75 50,100 0,75 0,25" fill="currentColor"/>
+          <polygon points="50,0 100,25 100,75 50,100 0,75 0,25" fill="currentColor" />
         </svg>
       </motion.div>
 
       {/* 2. Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="max-w-[680px]">
-          
+      <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 pb-20">
+        
+        {/* Left: Text Content */}
+        <div className="w-full max-w-[680px] relative z-20 text-center lg:text-left mt-10 md:mt-0">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -82,10 +85,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg md:text-xl text-white/80 font-sans leading-relaxed mb-12 max-w-[600px]"
+            className="text-lg md:text-xl text-white/80 font-sans leading-relaxed mb-12 max-w-[600px] mx-auto lg:mx-0"
           >
             Acompañamos a CEOs y alta dirección en procesos de expansión, posicionamiento y alianzas estratégicas de alto valor.
-            <br/><br/>
+            <br /><br />
             <strong className="font-semibold text-green/90 italic">No improvisamos crecimiento. Lo estructuramos.</strong>
           </motion.p>
 
@@ -93,7 +96,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
             <a
               href="#contacto"
@@ -108,14 +111,25 @@ export default function Hero() {
               Ver servicios
             </a>
           </motion.div>
+        </div>
 
+        {/* Right: Origami Giraffe Component */}
+        <div className="w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[500px] lg:w-1/2 flex justify-center lg:justify-end relative xl:scale-110 z-10 pt-10 lg:pt-0">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut", delay: 0.4 }}
+            className="w-full h-auto max-h-[50vh] xl:max-h-[70vh] aspect-[140/220]"
+          >
+            <OrigamiGiraffe className="w-full h-full object-contain" />
+          </motion.div>
         </div>
       </div>
 
       {/* 3. Bottom Gradient Fade & Scroll Indicator */}
       <div className="absolute bottom-0 w-full h-24 bg-gradient-to-b from-transparent to-[#0A1628] z-[5] pointer-events-none" />
-      
-      <motion.div 
+
+      <motion.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 pointer-events-none"
         style={{ opacity }}
       >
