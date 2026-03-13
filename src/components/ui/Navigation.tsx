@@ -10,10 +10,10 @@ export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Práctica", href: "#practica" },
-    { name: "Modelo", href: "#modelo" },
-    { name: "Casos", href: "#casos" },
-    { name: "Insights", href: "#insights" },
+    { name: "Práctica", href: "/#practica" },
+    { name: "Modelo", href: "/#modelo" },
+    { name: "Casos", href: "/#casos" },
+    { name: "Insights", href: "/#insights" },
     { name: "Valoración Clientes", href: "/valoracion" },
   ];
 
@@ -30,12 +30,20 @@ export default function Navigation() {
   }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith("#")) {
-      e.preventDefault();
-      setIsMobileMenuOpen(false);
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+    const isHomePage = window.location.pathname === "/";
+    
+    if (href.startsWith("/#")) {
+      const id = href.split("#")[1];
+      if (isHomePage) {
+        e.preventDefault();
+        setIsMobileMenuOpen(false);
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        // Allow default link behavior to navigate to homepage anchor
+        setIsMobileMenuOpen(false);
       }
     } else {
       setIsMobileMenuOpen(false);
@@ -54,7 +62,16 @@ export default function Navigation() {
       >
         <div className="glass rounded-[100px] px-6 py-4 flex items-center justify-between pointer-events-auto border border-white/10 shadow-lg">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group interactive" onClick={(e) => { e.preventDefault(); window.scrollTo({top: 0, behavior:"smooth"})}}>
+          <a 
+            href="/" 
+            className="flex items-center gap-2 group interactive" 
+            onClick={(e) => { 
+              if (window.location.pathname === "/") {
+                e.preventDefault(); 
+                window.scrollTo({top: 0, behavior:"smooth"});
+              }
+            }}
+          >
             <Image 
               src="/logotipo-origami-horizontal.png" 
               alt="Origami Consulting Group Logo - Consultoría Estratégica en Ecuador" 
@@ -83,8 +100,8 @@ export default function Navigation() {
           {/* Desktop CTA & Mobile Toggle */}
           <div className="flex items-center gap-4">
             <a
-              href="#contacto"
-              onClick={(e) => handleNavClick(e, "#contacto")}
+              href="/#contacto"
+              onClick={(e) => handleNavClick(e, "/#contacto")}
               className="hidden md:inline-flex bg-green text-navy px-5 py-2 rounded-full font-bold text-sm tracking-wide hover:scale-105 hover:shadow-[0_0_15px_rgba(125,194,66,0.4)] transition-all duration-300 interactive"
             >
               Iniciar conversación
@@ -130,8 +147,8 @@ export default function Navigation() {
                 </a>
               ))}
               <a
-                href="#contacto"
-                onClick={(e) => handleNavClick(e, "#contacto")}
+                href="/#contacto"
+                onClick={(e) => handleNavClick(e, "/#contacto")}
                 className="mt-4 bg-green text-navy px-8 py-4 rounded-full font-bold text-lg tracking-wide interactive"
               >
                 Iniciar conversación
