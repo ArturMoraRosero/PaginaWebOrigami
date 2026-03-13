@@ -44,7 +44,7 @@ export default function ValuationPage() {
                   href="/valoracion/calculadora"
                   className="border border-navy/10 text-navy px-8 py-4 rounded-full font-bold tracking-wide hover:bg-navy/5 transition-all flex items-center gap-2 interactive"
                 >
-                  <Calculator size={20} className="text-green" /> Calculadora Exprés
+                  <BarChart3 size={20} className="text-green" /> ¿Cuánto vale mi empresa?
                 </a>
               </div>
             </motion.div>
