@@ -64,17 +64,21 @@ export default function FormularioPage() {
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.error?.message || 'Error al enviar el archivo');
+        // Mostrar el mensaje específico de Resend si existe
+        const msg = errorData.error || 'Error al enviar el archivo';
+        throw new Error(msg);
       }
       
       setIsSent(true);
     } catch (error) {
       console.error('Upload error:', error);
-      alert('Hubo un error al enviar el formulario. Por favor, asegúrese de que la configuración del servidor (RESEND_API_KEY) sea correcta.');
+      const errorMessage = error instanceof Error ? error.message : 'Error desconocido';
+      alert(`Error: ${errorMessage}\n\nPosibles causas:\n1. La API Key en Vercel es incorrecta.\n2. Resend solo permite enviar a tu propio correo hasta que verifiques tu dominio.\n3. El archivo es demasiado grande.`);
     } finally {
       setIsSending(false);
     }
   };
+Line:
 
   const renderCurrentStep = () => {
     switch (currentStep) {

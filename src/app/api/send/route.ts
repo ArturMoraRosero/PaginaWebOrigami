@@ -29,11 +29,18 @@ export async function POST(req: NextRequest) {
     });
 
     if (error) {
-      return NextResponse.json({ error }, { status: 500 });
+      console.error('Resend API Error:', error);
+      return NextResponse.json({ 
+        error: error.message || 'Error en el servicio de Resend',
+        details: error 
+      }, { status: 500 });
     }
 
     return NextResponse.json(data);
   } catch (error) {
-    return NextResponse.json({ error: (error as Error).message }, { status: 500 });
+    console.error('Server Catch Error:', error);
+    return NextResponse.json({ 
+      error: (error as Error).message || 'Error interno del servidor' 
+    }, { status: 500 });
   }
 }
