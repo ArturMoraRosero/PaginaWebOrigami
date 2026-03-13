@@ -28,6 +28,9 @@ const STEPS = [
 
 export default function FormularioPage() {
   const [currentStep, setCurrentStep] = useState(1);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [isSending, setIsSending] = useState(false);
+  const [isSent, setIsSent] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -39,6 +42,23 @@ export default function FormularioPage() {
 
   const nextStep = () => setCurrentStep(prev => Math.min(prev + 1, STEPS.length));
   const prevStep = () => setCurrentStep(prev => Math.max(prev - 1, 1));
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setSelectedFile(e.target.files[0]);
+    }
+  };
+
+  const handleUpload = async () => {
+    if (!selectedFile) return;
+    setIsSending(true);
+    
+    // Simular envío a alianzas@oriconsultoria.com
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    setIsSending(false);
+    setIsSent(true);
+  };
 
   const renderCurrentStep = () => {
     switch (currentStep) {
@@ -93,51 +113,79 @@ export default function FormularioPage() {
       case 4:
         return (
           <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}>
-            <h2 className="text-2xl font-bold text-navy mb-12 flex items-center gap-3">
-              <Download className="text-green" /> Descarga del Formulario Especializado
-            </h2>
-            <div className="bg-surface rounded-3xl p-8 border border-green/20 border-dashed text-center">
-              <FileText size={48} className="mx-auto text-green/40 mb-6" />
-              <h3 className="text-xl font-bold text-navy mb-4">Formulario de Levantamiento de Información</h3>
-              <p className="text-text/60 mb-8 max-w-md mx-auto">
-                Este documento técnico contiene todas las secciones requeridas. Complételo y envíelo a <strong className="text-navy">alianzas@oriconsultoria.com</strong> o cárguelo directamente debajo.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
-                <a 
-                  href="/formulario_valoracion_origami.docx"
-                  download
-                  className="inline-flex bg-green text-navy px-8 py-4 rounded-full font-bold shadow-lg hover:scale-105 transition-all items-center gap-2 interactive"
-                >
-                  <Download size={20} /> Descargar Formulario (.DOCX)
-                </a>
-              </div>
-
-              <div className="pt-8 border-t border-navy/5">
-                <h4 className="text-navy font-bold mb-4">Enviar Formulario Completado</h4>
-                <div className="space-y-4 max-w-sm mx-auto">
-                  <div className="relative group">
-                    <input 
-                      type="file" 
-                      id="file-upload"
-                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
-                    />
-                    <label 
-                      htmlFor="file-upload"
-                      className="flex items-center justify-center gap-3 w-full bg-surface border-2 border-dashed border-navy/10 rounded-2xl py-6 px-4 group-hover:border-green group-hover:bg-green/5 transition-all"
-                    >
-                      <Users className="text-navy/30 group-hover:text-green" />
-                      <span className="text-navy/60 font-medium group-hover:text-navy">Seleccionar archivo</span>
-                    </label>
-                  </div>
-                  <button 
-                    className="w-full bg-navy text-white py-4 rounded-2xl font-bold hover:bg-navy/90 transition-all flex items-center justify-center gap-2 group shadow-xl"
-                  >
-                    Enviar a Origami <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                  </button>
+            {isSent ? (
+              <div className="text-center py-10">
+                <div className="w-20 h-20 bg-green/10 rounded-full flex items-center justify-center text-green mx-auto mb-6">
+                  <CheckCircle2 size={40} />
                 </div>
+                <h2 className="text-3xl font-bold text-navy mb-4">¡Formulario Enviado!</h2>
+                <p className="text-text/60 mb-8">Gracias. Hemos recibido tu información técnica y comenzaremos la valoración de inmediato.</p>
+                <button 
+                  onClick={() => router.push('/')}
+                  className="bg-navy text-white px-8 py-3 rounded-full font-bold hover:scale-105 transition-all"
+                >
+                  Volver al Inicio
+                </button>
               </div>
-            </div>
+            ) : (
+              <>
+                <h2 className="text-2xl font-bold text-navy mb-12 flex items-center gap-3">
+                  <Download className="text-green" /> Descarga del Formulario Especializado
+                </h2>
+                <div className="bg-surface rounded-3xl p-8 border border-green/20 border-dashed text-center">
+                  <FileText size={48} className="mx-auto text-green/40 mb-6" />
+                  <h3 className="text-xl font-bold text-navy mb-4">Formulario de Levantamiento de Información</h3>
+                  <p className="text-text/60 mb-8 max-w-md mx-auto">
+                    Este documento técnico contiene todas las secciones requeridas. Complételo y envíelo a <strong className="text-navy">alianzas@oriconsultoria.com</strong> o cárguelo directamente debajo.
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
+                    <a 
+                      href="/formulario_valoracion_origami.docx"
+                      download
+                      className="inline-flex bg-green text-navy px-8 py-4 rounded-full font-bold shadow-lg hover:scale-105 transition-all items-center gap-2 interactive"
+                    >
+                      <Download size={20} /> Descargar Formulario (.DOCX)
+                    </a>
+                  </div>
+
+                  <div className="pt-8 border-t border-navy/5">
+                    <h4 className="text-navy font-bold mb-4">Enviar Formulario Completado</h4>
+                    <div className="space-y-4 max-w-sm mx-auto">
+                      <div className="relative group">
+                        <input 
+                          type="file" 
+                          id="file-upload"
+                          onChange={handleFileChange}
+                          accept=".doc,.docx,.pdf"
+                          className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                        />
+                        <label 
+                          htmlFor="file-upload"
+                          className={`flex items-center justify-center gap-3 w-full bg-surface border-2 border-dashed rounded-2xl py-6 px-4 transition-all ${selectedFile ? 'border-green bg-green/5' : 'border-navy/10 group-hover:border-green group-hover:bg-green/5'}`}
+                        >
+                          <Users className={selectedFile ? 'text-green' : 'text-navy/30 group-hover:text-green'} />
+                          <span className={`${selectedFile ? 'text-navy' : 'text-navy/60'} font-medium group-hover:text-navy truncate px-2 text-sm`}>
+                            {selectedFile ? selectedFile.name : 'Seleccionar archivo'}
+                          </span>
+                        </label>
+                      </div>
+                      <button 
+                        onClick={handleUpload}
+                        disabled={!selectedFile || isSending}
+                        className={`w-full py-4 rounded-2xl font-bold transition-all flex items-center justify-center gap-2 group shadow-xl ${!selectedFile || isSending ? 'bg-navy/20 cursor-not-allowed text-navy/40' : 'bg-navy text-white hover:bg-navy/90'}`}
+                      >
+                        {isSending ? (
+                          <>Enviando...</>
+                        ) : (
+                          <>Enviar a Origami <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" /></>
+                        )}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
           </motion.div>
         );
     }
