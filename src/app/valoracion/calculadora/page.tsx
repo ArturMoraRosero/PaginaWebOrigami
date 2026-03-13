@@ -13,7 +13,8 @@ import {
   Info,
   ChevronRight,
   RefreshCcw,
-  Scale
+  Scale,
+  BarChart3
 } from "lucide-react";
 import Link from "next/link";
 
@@ -70,7 +71,7 @@ export default function CalculadoraPage() {
               animate={{ opacity: 1, y: 0 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy/5 text-navy text-sm font-bold mb-6"
             >
-              <Calculator size={16} className="text-green" />
+              <BarChart3 size={16} className="text-green" />
               ESTIMACIÓN ESTRATÉGICA
             </motion.div>
             <motion.h1 
@@ -79,7 +80,7 @@ export default function CalculadoraPage() {
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-6xl font-syne font-bold text-navy mb-6 leading-tight"
             >
-              Calculadora de <span className="text-green">Valor Estimado</span>
+              ¿Cuánto vale <span className="text-green">mi empresa?</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
