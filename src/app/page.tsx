@@ -16,6 +16,29 @@ import Footer from "@/components/sections/Footer";
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-surface selection:bg-green selection:text-white overflow-hidden">
+      {/* JSON-LD Organization Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Origami Consulting Group",
+            "url": "https://oriconsultoria.com",
+            "logo": "https://oriconsultoria.com/logo-header-light.png",
+            "description": "Firma boutique de consultoría estratégica. Acompañamos a CEOs y alta dirección en procesos de expansión, posicionamiento y alianzas estratégicas de alto valor.",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "availableLanguage": "Spanish"
+            },
+            "sameAs": [
+              "https://www.linkedin.com/company/origami-consulting-group"
+            ]
+          })
+        }}
+      />
+      
       {/* 3D Scene Background mapped to scroll progress */}
       <Scene />
       
