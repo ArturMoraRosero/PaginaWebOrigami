@@ -53,11 +53,27 @@ export default function FormularioPage() {
     if (!selectedFile) return;
     setIsSending(true);
     
-    // Simular envío a alianzas@oriconsultoria.com
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSending(false);
-    setIsSent(true);
+    try {
+      const formData = new FormData();
+      formData.append('file', selectedFile);
+
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error?.message || 'Error al enviar el archivo');
+      }
+      
+      setIsSent(true);
+    } catch (error) {
+      console.error('Upload error:', error);
+      alert('Hubo un error al enviar el formulario. Por favor, asegúrese de que la configuración del servidor (RESEND_API_KEY) sea correcta.');
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const renderCurrentStep = () => {
