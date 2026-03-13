@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import Navigation from "@/components/ui/Navigation";
 import Footer from "@/components/sections/Footer";
 import Scene from "@/components/Scene";
