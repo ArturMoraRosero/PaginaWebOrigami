@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
 
     const { data, error } = await resend.emails.send({
       from: 'Origami Valoracion <onboarding@resend.dev>', // Usar dominio de prueba o uno verificado
-      to: ['alianzas@oriconsultoria.com'],
+      to: ['arturmorarosero@gmail.com'],
       subject: `Nueva Valoración: ${filename}`,
       text: `Se ha recibido un nuevo formulario de valoración de un cliente.\n\nArchivo adjunto: ${filename}`,
       attachments: [
