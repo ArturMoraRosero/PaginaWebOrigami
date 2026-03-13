@@ -100,7 +100,6 @@ export default function StrategicCase() {
                   viewBox="0 0 200 200" 
                   className="w-full h-full max-w-[300px] text-white opacity-80 transition-transform duration-1000 group-hover:scale-110 group-hover:rotate-3"
                 >
-                  {/* Origami/Geometric Abstract Folded Shape */}
                   {index % 3 === 0 ? (
                     // Graphic for KIYU
                     <>

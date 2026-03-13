@@ -14,6 +14,7 @@ export default function Navigation() {
     { name: "Modelo", href: "#modelo" },
     { name: "Casos", href: "#casos" },
     { name: "Insights", href: "#insights" },
+    { name: "Valoración Clientes", href: "/valoracion" },
   ];
 
   useEffect(() => {
@@ -29,11 +30,15 @@ export default function Navigation() {
   }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    setIsMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      setIsMobileMenuOpen(false);
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      setIsMobileMenuOpen(false);
     }
   };
 
