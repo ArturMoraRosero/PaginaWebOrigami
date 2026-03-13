@@ -26,7 +26,7 @@ export default function LoginPage() {
         localStorage.setItem("origami_auth", "true");
         router.push("/valoracion/formulario");
       } else {
-        setError("Credenciales no válidas. Intente con admin / origami2026");
+        setError("Credenciales no válidas. Por favor, verifique su usuario y contraseña.");
         setIsLoading(false);
       }
     }, 1500);
