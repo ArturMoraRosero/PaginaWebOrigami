@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Navigation from "@/components/ui/Navigation";
 import Footer from "@/components/sections/Footer";
 import Scene from "@/components/Scene";
-import { ClipboardList, BarChart3, ShieldCheck, ArrowRight } from "lucide-react";
+import { ClipboardList, BarChart3, ShieldCheck, ArrowRight, Calculator } from "lucide-react";
 
 export default function ValuationPage() {
   return (
@@ -38,11 +38,14 @@ export default function ValuationPage() {
                   href="/valoracion/login"
                   className="bg-green text-navy px-8 py-4 rounded-full font-bold tracking-wide hover:scale-105 hover:shadow-[0_4px_14px_rgba(125,194,66,0.3)] transition-all flex items-center gap-2 interactive"
                 >
-                  Empezar ahora <ArrowRight size={20} />
+                  Valoración Técnica <ArrowRight size={20} />
                 </a>
-                <button className="border border-navy/10 text-navy px-8 py-4 rounded-full font-bold tracking-wide hover:bg-navy/5 transition-all interactive">
-                  Saber más
-                </button>
+                <a 
+                  href="/valoracion/calculadora"
+                  className="border border-navy/10 text-navy px-8 py-4 rounded-full font-bold tracking-wide hover:bg-navy/5 transition-all flex items-center gap-2 interactive"
+                >
+                  <Calculator size={20} className="text-green" /> Calculadora Exprés
+                </a>
               </div>
             </motion.div>
 
