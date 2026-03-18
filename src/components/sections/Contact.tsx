@@ -3,6 +3,8 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
+import { Check } from "lucide-react";
+
 
 export default function Contact() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -19,6 +21,8 @@ export default function Contact() {
   const [errors, setErrors] = useState<Record<string, boolean>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -127,10 +131,7 @@ export default function Contact() {
                 className="flex flex-col items-center justify-center h-full text-center py-12"
               >
                 <div className="w-20 h-20 bg-green/20 rounded-full flex items-center justify-center mb-6">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#7DC242" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 11.08V12a10 10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                  </svg>
+                  <Check className="w-10 h-10 text-green" strokeWidth={3} />
                 </div>
                 <h3 className="text-2xl font-syne font-bold text-white mb-3">{t.contact.successTitle}</h3>
                 <p className="text-white/70 font-sans">
