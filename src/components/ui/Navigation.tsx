@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Globe } from "lucide-react";
@@ -64,7 +65,7 @@ export default function Navigation() {
       >
         <div className="glass rounded-[100px] px-6 py-4 flex items-center justify-between pointer-events-auto border border-white/10 shadow-lg">
           {/* Logo */}
-          <a 
+          <Link 
             href="/" 
             className="flex items-center gap-2 group interactive" 
             onClick={(e) => { 
@@ -82,7 +83,7 @@ export default function Navigation() {
               className="h-12 md:h-14 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
               priority
             />
-          </a>
+          </Link>
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8">
@@ -119,13 +120,13 @@ export default function Navigation() {
               </button>
             </div>
 
-            <a
+            <Link
               href="/#contacto"
               onClick={(e) => handleNavClick(e, "/#contacto")}
               className="hidden md:inline-flex bg-green text-navy px-5 py-2 rounded-full font-bold text-sm tracking-wide hover:scale-105 hover:shadow-[0_0_15px_rgba(125,194,66,0.4)] transition-all duration-300 interactive"
             >
               {t.nav.start}
-            </a>
+            </Link>
             <button
               className="md:hidden text-white interactive"
               onClick={() => setIsMobileMenuOpen(true)}
@@ -184,13 +185,13 @@ export default function Navigation() {
                 </button>
               </div>
 
-              <a
+              <Link
                 href="/#contacto"
                 onClick={(e) => handleNavClick(e, "/#contacto")}
                 className="mt-4 bg-green text-navy px-8 py-4 rounded-full font-bold text-lg tracking-wide interactive"
               >
                 {t.nav.start}
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}

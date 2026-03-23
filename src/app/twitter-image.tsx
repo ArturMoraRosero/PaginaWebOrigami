@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
  
-export const runtime = 'edge'
+
 export const alt = 'Origami Consulting Group - Premium Strategy'
 export const size = { width: 1200, height: 600 }
 export const contentType = 'image/png'
@@ -30,6 +30,7 @@ export default async function Image() {
             right: 0,
             bottom: 0,
             backgroundImage: 'radial-gradient(circle at center, rgba(30, 61, 122, 0.5) 0%, rgba(13, 27, 53, 1) 100%)',
+            display: 'flex',
           }}
         />
 
@@ -52,6 +53,7 @@ export default async function Image() {
               letterSpacing: '-0.02em',
               marginBottom: 20,
               textAlign: 'center',
+              display: 'flex',
             }}
           >
             Origami <span style={{ color: '#7DC242' }}>Consulting</span> Group
