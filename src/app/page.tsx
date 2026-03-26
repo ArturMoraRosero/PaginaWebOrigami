@@ -9,7 +9,7 @@ import MethodologySection from "@/components/sections/MethodologySection";
 import StrategicCase from "@/components/sections/StrategicCase";
 import Distinctions from "@/components/sections/Distinctions";
 import QuoteSection from "@/components/sections/QuoteSection";
-import InsightsSection from "@/components/sections/InsightsSection";
+import SocialInsights from "@/components/sections/SocialInsights";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 
@@ -22,18 +22,41 @@ export default function Home() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
+            "@type": "ProfessionalService",
             "name": "Origami Consulting Group",
-            "url": "https://oriconsultoria.com",
-            "logo": "https://oriconsultoria.com/logo-header-light.png",
-            "description": "Firma boutique de consultoría estratégica. Acompañamos a CEOs y alta dirección en procesos de expansión, posicionamiento y alianzas estratégicas de alto valor.",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "contactType": "customer support",
-              "availableLanguage": "Spanish"
+            "url": "https://www.oriconsultoria.com",
+            "logo": "https://www.oriconsultoria.com/logo-header-light.png",
+            "image": "https://www.oriconsultoria.com/brand-valuation-premium.png",
+            "description": "Firma boutique de consultoría estratégica en Quito. Acompañamos a CEOs en expansión comercial, alianzas B2B y valoración estratégica.",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Av. Eloy Alfaro y Pasaje A, Edificio Murano",
+              "addressLocality": "Quito",
+              "addressRegion": "Pichincha",
+              "postalCode": "170102",
+              "addressCountry": "EC"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": -0.1703472,
+              "longitude": -78.470309
+            },
+            "telephone": "+593985141999",
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:30",
+                "closes": "18:30"
+              }
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5.0",
+              "reviewCount": "10"
             },
             "sameAs": [
-              "https://www.linkedin.com/company/origami-consulting-group"
+              "https://www.linkedin.com/company/origami-consulting-group-sas/"
             ]
           })
         }}
@@ -55,7 +78,7 @@ export default function Home() {
         <StrategicCase />
         <Distinctions />
         <QuoteSection />
-        <InsightsSection />
+        <SocialInsights />
         <Contact />
       </div>
 

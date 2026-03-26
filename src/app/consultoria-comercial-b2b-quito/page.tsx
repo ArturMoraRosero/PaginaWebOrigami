@@ -1,8 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { Network, TrendingUp, Zap, Target, Users, ShieldCheck, BarChart3, MapPin, MessageCircle } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { Network, Users, ShieldCheck, MapPin, MessageCircle, TrendingUp, Zap } from "lucide-react";
 import Navigation from "@/components/ui/Navigation";
 import Footer from "@/components/sections/Footer";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
@@ -87,7 +87,6 @@ const SectionHeader = ({ tag, title, dark = false }: { tag: string; title: strin
 };
 
 export default function B2BQuitoPage() {
-  const containerRef = useRef<HTMLDivElement>(null);
   
   return (
     <main className="relative min-h-screen bg-surface selection:bg-green selection:text-white overflow-hidden">

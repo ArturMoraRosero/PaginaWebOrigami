@@ -16,12 +16,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://oriconsultoria.com'),
+  metadataBase: new URL('https://www.oriconsultoria.com'),
   title: {
-    default: "Origami Consulting Group | Consultoría Estratégica Boutique",
-    template: "%s | Origami Consulting Group",
+    default: "Origami Consulting Group | Consultoría Estratégica",
+    template: "%s | Origami Strategy",
   },
-  description: "Firma boutique de consultoría estratégica. Acompañamos a CEOs y alta dirección en expansión comercial, alianzas estratégicas y valoración de marca en Ecuador y Latinoamérica.",
+  description: "Firma boutique de consultoría estratégica en Ecuador. Acompañamos a CEOs en expansión comercial, alianzas B2B y valoración de marca. Agende su sesión hoy.",
   keywords: ["consultoría estratégica", "firma boutique estrategia", "alianzas comerciales B2B", "expansión empresarial", "consultor estratégico CEO", "valoración de marca Ecuador", "desarrollo de negocios Latinoamérica"],
   authors: [{ name: "Origami Consulting Group" }],
   creator: "Origami Consulting Group",
@@ -32,10 +32,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_EC",
-    url: "https://oriconsultoria.com",
+    url: "https://www.oriconsultoria.com",
     siteName: "Origami Consulting Group",
     title: "Origami Consulting Group | Consultoría Estratégica Boutique",
-    description: "Firma boutique de consultoría estratégica en Ecuador. Expansión comercial y valoración de marca para CEOs y alta dirección.",
+    description: "Firma boutique de consultoría estratégica en Ecuador. Expansión comercial y valoración de marca. Agende su sesión hoy.",
     images: [
       {
         url: "/opengraph-image.png",

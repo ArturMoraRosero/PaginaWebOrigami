@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Network, TrendingUp, Zap, Target, Users, ShieldCheck, BarChart3, MapPin, MessageCircle, FileText, PieChart, ArrowRight } from "lucide-react";
+import { Network, TrendingUp, Zap, Target, ShieldCheck, BarChart3, MapPin, MessageCircle, PieChart, ArrowRight } from "lucide-react";
 import Navigation from "@/components/ui/Navigation";
 import Footer from "@/components/sections/Footer";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";

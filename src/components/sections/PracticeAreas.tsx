@@ -70,7 +70,7 @@ export default function PracticeAreas() {
               <div className="relative z-10 flex flex-col h-full">
                 
                 <div className="w-12 h-12 rounded-full border border-green/20 bg-green/5 flex items-center justify-center mb-12 group-hover:bg-green/10 transition-colors">
-                  <service.icon className="w-6 h-6 text-green" strokeWidth={1.5} />
+                  <service.icon className="w-6 h-6 text-green" strokeWidth={1.5} aria-label={`${service.title} - Consultoría en Quito`} />
                 </div>
                 
                 <div className="mt-auto">

@@ -66,7 +66,7 @@ export default function Contact() {
           alert(t.contact.form.errorSend);
         }
     })
-    .catch(error => {
+    .catch(() => {
         setIsSubmitting(false);
         alert(t.contact.form.errorConn);
     });

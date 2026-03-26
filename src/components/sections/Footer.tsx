@@ -20,7 +20,10 @@ export default function Footer() {
           />
           <p className="font-sans text-white/50 text-sm max-w-sm mb-6">
             {t.footer.description}<br/>
-            {t.footer.city}
+            Cumbayá, Quito - Ecuador<br/>
+            <span className="text-white/30 text-[10px] mt-2 block">
+              Cobertura estratégica: Quito, Guayaquil, Cuenca y expansión regional.
+            </span>
           </p>
           <div className="font-sans text-sm text-white/70 space-y-2">
             <p className="hover:text-accent-green transition-colors cursor-pointer w-fit">www.oriconsultoria.com</p>
@@ -43,6 +46,14 @@ export default function Footer() {
               className="hover:text-green transition-colors w-fit flex items-center gap-2 mt-2 pt-2 border-t border-white/10"
             >
               LinkedIn ↗
+            </a>
+            <a 
+              href="https://www.instagram.com/origamiconsultingroup/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-green transition-colors w-fit flex items-center gap-2"
+            >
+              Instagram ↗
             </a>
           </nav>
         </div>

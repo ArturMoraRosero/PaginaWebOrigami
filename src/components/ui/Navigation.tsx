@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Navigation() {
@@ -16,7 +16,7 @@ export default function Navigation() {
     { name: t.nav.practice, href: "/#practica" },
     { name: t.nav.model, href: "/#modelo" },
     { name: t.nav.cases, href: "/#casos" },
-    { name: t.nav.insights, href: "/#insights" },
+    { name: t.nav.insights, href: "/#insights-social" },
     { name: t.nav.valuation, href: "/valoracion" },
   ];
 

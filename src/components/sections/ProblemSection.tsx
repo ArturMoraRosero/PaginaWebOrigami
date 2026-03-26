@@ -3,12 +3,6 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
-const problems = [
-  "Falta de claridad estratégica",
-  "Equipos desalineados",
-  "Decisiones sin estructura",
-  "Crecimiento sin dirección"
-];
 
 export default function ProblemSection() {
   const ref = useRef(null);

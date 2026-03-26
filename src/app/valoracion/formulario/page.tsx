@@ -1,14 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Navigation from "@/components/ui/Navigation";
 import Footer from "@/components/sections/Footer";
 import Scene from "@/components/Scene";
 import { 
   Building2, 
-  TrendingUp, 
   Globe2, 
   CheckCircle2, 
   ArrowRight, 

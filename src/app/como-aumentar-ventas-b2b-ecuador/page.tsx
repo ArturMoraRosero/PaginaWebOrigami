@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { BookOpen, AlertCircle, CheckCircle2, TrendingUp, Users, Target, BarChart, Settings, MessageCircle, ChevronRight, ArrowRight } from "lucide-react";
+import { BookOpen, AlertCircle, Users, Target, BarChart, Settings, MessageCircle, ArrowRight } from "lucide-react";
 import Navigation from "@/components/ui/Navigation";
 import Footer from "@/components/sections/Footer";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
@@ -92,24 +92,56 @@ export default function B2BSalesBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            "headline": "Cómo aumentar ventas B2B en Ecuador | Guía práctica",
-            "description": "Descubra estrategias efectivas para escalar el rendimiento comercial de su empresa en el mercado B2B ecuatoriano.",
-            "author": {
-              "@type": "Organization",
-              "name": "Origami Consulting Group"
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "headline": "Cómo aumentar ventas B2B en Ecuador | Guía práctica",
+              "description": "Descubra estrategias efectivas para escalar el rendimiento comercial de su empresa en el mercado B2B ecuatoriano.",
+              "author": {
+                "@type": "Organization",
+                "name": "Origami Consulting Group"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Origami Consulting Group"
+              },
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://www.oriconsultoria.com/como-aumentar-ventas-b2b-ecuador"
+              }
             },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Origami Consulting Group"
-            },
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://oriconsultoria.com/como-aumentar-ventas-b2b-ecuador"
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "¿Cómo aumentar las ventas B2B en el mercado ecuatoriano?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Para aumentar las ventas B2B en Ecuador es fundamental profesionalizar el proceso comercial, implementar un CRM para el seguimiento y enfocar los esfuerzos en un Perfil de Cliente Ideal (ICP) rentable."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "¿Por qué contratar una consultoría comercial en Quito?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Una consultoría local en Quito ofrece conocimiento profundo del ecosistema empresarial andino y permite una conexión directa con los centros de decisión más importantes del país."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "¿Cuál es el error más común en las ventas B2B en Ecuador?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El error más común es depender exclusivamente de referidos y relaciones personales sin contar con un sistema escalable y predecible de prospección directa."
+                  }
+                }
+              ]
             }
-          })
+          ])
         }}
       />
 

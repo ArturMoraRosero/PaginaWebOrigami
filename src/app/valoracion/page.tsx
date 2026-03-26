@@ -1,10 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Navigation from "@/components/ui/Navigation";
 import Footer from "@/components/sections/Footer";
 import Scene from "@/components/Scene";
-import { ClipboardList, BarChart3, ShieldCheck, ArrowRight, Calculator } from "lucide-react";
+import { BarChart3, ShieldCheck, ArrowRight } from "lucide-react";
 
 export default function ValuationPage() {
   return (
@@ -57,9 +58,11 @@ export default function ValuationPage() {
             >
               <div className="aspect-square rounded-3xl bg-white border border-navy/[0.05] shadow-[0_20px_50px_rgba(26,46,90,0.05)] p-4 flex items-center justify-center relative overflow-hidden group">
                 {/* Generated Premium Visual */}
-                <img 
+                <Image 
                   src="/brand-valuation-premium.png" 
                   alt="Valoración de Marca Estratégica" 
+                  width={600}
+                  height={600}
                   className="w-full h-full object-cover rounded-2xl transition-transform duration-700 group-hover:scale-105"
                 />
                 
