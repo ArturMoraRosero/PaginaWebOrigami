@@ -1,17 +1,20 @@
-import Scene from "@/components/Scene";
-import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
+import dynamic from "next/dynamic";
 import Navigation from "@/components/ui/Navigation";
 import Hero from "@/components/sections/Hero";
-import ProblemSection from "@/components/sections/ProblemSection";
-import PracticeAreas from "@/components/sections/PracticeAreas";
-import BrandValuationSection from "@/components/sections/BrandValuationSection";
-import MethodologySection from "@/components/sections/MethodologySection";
-import StrategicCase from "@/components/sections/StrategicCase";
-import Distinctions from "@/components/sections/Distinctions";
-import QuoteSection from "@/components/sections/QuoteSection";
-import SocialInsights from "@/components/sections/SocialInsights";
-import Contact from "@/components/sections/Contact";
-import Footer from "@/components/sections/Footer";
+
+// Lazy load below-the-fold components
+const Scene = dynamic(() => import("@/components/Scene"));
+const FloatingWhatsApp = dynamic(() => import("@/components/ui/FloatingWhatsApp"));
+const ProblemSection = dynamic(() => import("@/components/sections/ProblemSection"));
+const PracticeAreas = dynamic(() => import("@/components/sections/PracticeAreas"));
+const BrandValuationSection = dynamic(() => import("@/components/sections/BrandValuationSection"));
+const MethodologySection = dynamic(() => import("@/components/sections/MethodologySection"));
+const StrategicCase = dynamic(() => import("@/components/sections/StrategicCase"));
+const Distinctions = dynamic(() => import("@/components/sections/Distinctions"));
+const QuoteSection = dynamic(() => import("@/components/sections/QuoteSection"));
+const SocialInsights = dynamic(() => import("@/components/sections/SocialInsights"));
+const Contact = dynamic(() => import("@/components/sections/Contact"));
+const Footer = dynamic(() => import("@/components/sections/Footer"));
 
 export default function Home() {
   return (

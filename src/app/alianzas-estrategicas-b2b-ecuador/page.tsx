@@ -3,11 +3,13 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Users, ShieldCheck, MapPin, MessageCircle, Handshake, Globe, Rocket, Layers, ChevronRight } from "lucide-react";
+import dynamic from "next/dynamic";
 import Navigation from "@/components/ui/Navigation";
-import Footer from "@/components/sections/Footer";
-import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
-import Scene from "@/components/Scene";
-import Contact from "@/components/sections/Contact";
+
+const Footer = dynamic(() => import("@/components/sections/Footer"));
+const FloatingWhatsApp = dynamic(() => import("@/components/ui/FloatingWhatsApp"));
+const Scene = dynamic(() => import("@/components/Scene"), { ssr: false });
+const Contact = dynamic(() => import("@/components/sections/Contact"));
 
 // SEO Content for the B2B Strategic Alliances Page in Ecuador
 const content = {

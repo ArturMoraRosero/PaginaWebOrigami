@@ -3,8 +3,10 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Navigation from "@/components/ui/Navigation";
+import dynamic from "next/dynamic";
 import Footer from "@/components/sections/Footer";
-import Scene from "@/components/Scene";
+
+const Scene = dynamic(() => import("@/components/Scene"), { ssr: false });
 import { BarChart3, ShieldCheck, ArrowRight } from "lucide-react";
 
 export default function ValuationPage() {

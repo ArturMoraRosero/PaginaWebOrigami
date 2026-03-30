@@ -3,11 +3,13 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Network, TrendingUp, Zap, Target, ShieldCheck, BarChart3, MapPin, MessageCircle, PieChart, ArrowRight } from "lucide-react";
+import dynamic from "next/dynamic";
 import Navigation from "@/components/ui/Navigation";
-import Footer from "@/components/sections/Footer";
-import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
-import Scene from "@/components/Scene";
-import Contact from "@/components/sections/Contact";
+
+const Footer = dynamic(() => import("@/components/sections/Footer"));
+const FloatingWhatsApp = dynamic(() => import("@/components/ui/FloatingWhatsApp"));
+const Scene = dynamic(() => import("@/components/Scene"), { ssr: false });
+const Contact = dynamic(() => import("@/components/sections/Contact"));
 
 const Gem = ({ className }: { className?: string }) => <Zap className={className} />;
 
