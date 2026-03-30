@@ -19,7 +19,7 @@ export default function OrigamiGiraffe({ className = "" }: { className?: string 
       */}
       <div className="relative w-full h-[120%] flex justify-center items-center">
         <Image 
-          src="/Jirafa_Premium_3D.png" 
+          src="/Jirafa_Premium_3D.webp" 
           alt="Origami Giraffe 3D" 
           width={800} 
           height={800}

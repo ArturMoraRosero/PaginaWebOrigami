@@ -61,7 +61,7 @@ export default function ValuationPage() {
               <div className="aspect-square rounded-3xl bg-white border border-navy/[0.05] shadow-[0_20px_50px_rgba(26,46,90,0.05)] p-4 flex items-center justify-center relative overflow-hidden group">
                 {/* Generated Premium Visual */}
                 <Image 
-                  src="/brand-valuation-premium.png" 
+                  src="/brand-valuation-premium.webp" 
                   alt="Valoración de Marca Estratégica" 
                   width={600}
                   height={600}
