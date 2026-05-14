@@ -81,7 +81,7 @@ export default function Navigation() {
               width={260} 
               height={70} 
               className="h-12 md:h-14 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
-              priority
+              priority loading="eager"
             />
           </Link>
 
