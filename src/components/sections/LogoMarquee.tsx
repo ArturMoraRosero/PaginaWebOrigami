@@ -14,6 +14,7 @@ const LOGOS: { name: string; src: string; treatment: Treatment }[] = [
   { name: "ALOHA ECUADOR", src: "/logos/aloha.png", treatment: "mono" },
   { name: "ALTIDAT", src: "/logos/altidat.png", treatment: "invert" },
   { name: "CLICKHOME", src: "/logos/clickhome.png", treatment: "invert" },
+  { name: "METALTRONIC GROUP", src: "/logos/metaltronic.png", treatment: "invert" },
 ];
 
 const TREATMENT_CLASSES: Record<Treatment, string> = {
