@@ -54,11 +54,6 @@ export default function Home() {
                 "closes": "18:30"
               }
             ],
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "5.0",
-              "reviewCount": "10"
-            },
             "sameAs": [
               "https://www.linkedin.com/company/origami-consulting-group-sas/"
             ]

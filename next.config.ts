@@ -4,6 +4,21 @@ const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
+  async redirects() {
+    return [
+      // URLs del sitio anterior aún indexadas en Google → 301 al home
+      {
+        source: '/post/:slug*',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/blog/:slug*',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
