@@ -15,6 +15,7 @@ export default function Contact() {
     name: "",
     company: "",
     email: "",
+    phone: "",
     message: ""
   });
 
@@ -32,6 +33,7 @@ export default function Contact() {
     if (!formState.name) newErrors.name = true;
     if (!formState.company) newErrors.company = true;
     if (!formState.email || !/^\S+@\S+\.\S+$/.test(formState.email)) newErrors.email = true;
+    if (!formState.phone || formState.phone.replace(/\D/g, "").length < 7) newErrors.phone = true;
     if (!formState.message) newErrors.message = true;
 
     if (Object.keys(newErrors).length > 0) {
@@ -53,6 +55,7 @@ export default function Contact() {
         Nombre: formState.name,
         Empresa: formState.company,
         Email: formState.email,
+        Telefono: formState.phone,
         Mensaje: formState.message,
         _subject: "Nuevo mensaje de contacto web - Origami Consulting",
       })
@@ -177,6 +180,19 @@ export default function Contact() {
                     onChange={handleChange}
                     className={`w-full bg-navy/40 border ${errors.email ? 'border-red-500/50 animate-[shake_0.5s_ease-in-out]' : 'border-white/10'} rounded-xl px-4 py-4 text-white placeholder-white/20 focus:outline-none focus:border-green focus:bg-white/5 transition-all interactive`}
                     placeholder="ejemplo@empresa.com"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="phone" className="text-sm font-sans text-white/60 ml-2">{t.contact.form.phone}</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formState.phone}
+                    onChange={handleChange}
+                    className={`w-full bg-navy/40 border ${errors.phone ? 'border-red-500/50 animate-[shake_0.5s_ease-in-out]' : 'border-white/10'} rounded-xl px-4 py-4 text-white placeholder-white/20 focus:outline-none focus:border-green focus:bg-white/5 transition-all interactive`}
+                    placeholder={t.contact.form.phonePlaceholder}
                   />
                 </div>
 
