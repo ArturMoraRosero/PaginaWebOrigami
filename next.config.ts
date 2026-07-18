@@ -17,6 +17,16 @@ const nextConfig: NextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/privacy',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/privacy/:slug*',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
   async headers() {

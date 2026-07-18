@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/private/'],
+      disallow: ['/private/', '/valoracion/login'],
     },
     sitemap: 'https://www.oriconsultoria.com/sitemap.xml',
   }
