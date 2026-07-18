@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+# archivos fuente de logos (no publicar)
+/Logos_Originales
+
 # debug
 npm-debug.log*
 yarn-debug.log*

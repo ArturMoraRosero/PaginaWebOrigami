@@ -5,6 +5,7 @@ import Hero from "@/components/sections/Hero";
 // Lazy load below-the-fold components
 const Scene = dynamic(() => import("@/components/Scene"));
 const FloatingWhatsApp = dynamic(() => import("@/components/ui/FloatingWhatsApp"));
+const LogoMarquee = dynamic(() => import("@/components/sections/LogoMarquee"));
 const ProblemSection = dynamic(() => import("@/components/sections/ProblemSection"));
 const PracticeAreas = dynamic(() => import("@/components/sections/PracticeAreas"));
 const BrandValuationSection = dynamic(() => import("@/components/sections/BrandValuationSection"));
@@ -74,6 +75,7 @@ export default function Home() {
       {/* Pages Container */}
       <div className="relative z-10">
         <Hero />
+        <LogoMarquee />
         <ProblemSection />
         <PracticeAreas />
         <BrandValuationSection />

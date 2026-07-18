@@ -18,6 +18,9 @@ export const dictionaries = {
       ctaServices: "Ver servicios",
       scroll: "Scroll"
     },
+    trusted: {
+      label: "Empresas que acompañamos"
+    },
     problem: {
       title: "Los desafíos estratégicos de las organizaciones",
       items: [
@@ -94,6 +97,21 @@ export const dictionaries = {
           category: "EXPANSIÓN B2B & DESARROLLO COMERCIAL",
           title: "HEDGEHOG BRAND",
           description: "Identificación y desarrollo de nuevos canales de venta B2B y estructuración de alianzas comerciales estratégicas para expandir el alcance de la marca hacia mercados y socios de alto valor."
+        },
+        {
+          category: "DESARROLLO COMERCIAL B2B",
+          title: "BOA ESTRATEGIA",
+          description: "Diseño y activación del sistema de prospección comercial de una firma líder en comunicación estratégica: arquitectura de canales, cadencia de contacto y playbook por industria para convertir reputación en pipeline."
+        },
+        {
+          category: "ARQUITECTURA COMERCIAL & CONTROL GERENCIAL",
+          title: "GRUPO CAM",
+          description: "Estructuración del sistema comercial y de control gerencial de un grupo constructor: pipeline con métricas de gestión, panel directivo y arquitectura de compras para sus unidades de negocio."
+        },
+        {
+          category: "ALIANZAS BANCARIAS & ACTIVACIÓN DE CANAL",
+          title: "ALOHA ECUADOR",
+          description: "Negociación de convenios de pago diferido con los principales emisores del país y activación de campañas con tarjetahabientes para eliminar la fricción de pago y abrir un nuevo canal de captación."
         }
       ]
     },
@@ -183,6 +201,9 @@ export const dictionaries = {
       ctaServices: "View services",
       scroll: "Scroll"
     },
+    trusted: {
+      label: "Companies we partner with"
+    },
     problem: {
       title: "The strategic challenges of organizations",
       items: [
@@ -259,6 +280,21 @@ export const dictionaries = {
           category: "B2B EXPANSION & COMMERCIAL DEVELOPMENT",
           title: "HEDGEHOG BRAND",
           description: "Identification and development of new B2B sales channels and structuring of strategic commercial alliances to expand the brand's reach towards high-value markets and partners."
+        },
+        {
+          category: "B2B COMMERCIAL DEVELOPMENT",
+          title: "BOA ESTRATEGIA",
+          description: "Design and activation of the commercial prospecting system for a leading strategic communications firm: channel architecture, contact cadence, and industry playbooks to turn reputation into pipeline."
+        },
+        {
+          category: "COMMERCIAL ARCHITECTURE & MANAGEMENT CONTROL",
+          title: "GRUPO CAM",
+          description: "Structuring of the commercial and management control system for a construction group: pipeline with performance metrics, executive dashboard, and procurement architecture for its business units."
+        },
+        {
+          category: "BANKING ALLIANCES & CHANNEL ACTIVATION",
+          title: "ALOHA ECUADOR",
+          description: "Negotiation of deferred payment agreements with the country's main card issuers and activation of cardholder campaigns to remove payment friction and open a new acquisition channel."
         }
       ]
     },
