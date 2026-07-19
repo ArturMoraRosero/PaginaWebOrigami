@@ -18,9 +18,9 @@ const LOGOS: { name: string; src: string; treatment: Treatment }[] = [
 ];
 
 const TREATMENT_CLASSES: Record<Treatment, string> = {
-  invert: "brightness-0 invert opacity-40 group-hover/logo:brightness-100 group-hover/logo:invert-0 group-hover/logo:opacity-100",
-  mono: "brightness-0 invert opacity-40 group-hover/logo:opacity-90",
-  original: "opacity-60 saturate-[0.3] group-hover/logo:opacity-100 group-hover/logo:saturate-100",
+  invert: "brightness-0 invert opacity-80 md:opacity-40 group-hover/logo:brightness-100 group-hover/logo:invert-0 group-hover/logo:opacity-100",
+  mono: "brightness-0 invert opacity-80 md:opacity-40 group-hover/logo:opacity-90",
+  original: "opacity-90 md:opacity-60 saturate-[0.3] group-hover/logo:opacity-100 group-hover/logo:saturate-100",
 };
 
 function LogoItem({ name, src, treatment }: { name: string; src: string; treatment: Treatment }) {

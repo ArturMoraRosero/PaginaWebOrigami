@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export default function OrigamiGiraffe({ className = "" }: { className?: string }) {
   const [phase, setPhase] = useState<"intro" | "loop">("intro");
@@ -51,13 +50,14 @@ export default function OrigamiGiraffe({ className = "" }: { className?: string 
             <source src={`/jirafa-${phase}.webm`} type="video/webm" />
           </video>
         ) : (
-          <Image
-            src="/Jirafa_Premium_3D.webp"
-            alt="Origami Giraffe 3D"
-            width={800}
-            height={800}
+          // Safari/iOS: WebP animado con transparencia (WebM alfa no soportado)
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src="/jirafa-loop.webp"
+            alt="Jirafa de origami 3D - Origami Consulting Group"
+            width={480}
+            height={482}
             className="object-contain w-full h-full transform scale-110"
-            priority
           />
         )}
       </div>
