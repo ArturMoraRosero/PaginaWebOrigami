@@ -50,10 +50,10 @@ export default function OrigamiGiraffe({ className = "" }: { className?: string 
             <source src={`/jirafa-${phase}.webm`} type="video/webm" />
           </video>
         ) : (
-          // Safari/iOS: WebP animado con transparencia (WebM alfa no soportado)
+          // Safari/iOS: APNG animado con transparencia (WebM alfa no soportado)
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src="/jirafa-loop.webp"
+            src="/jirafa-loop.png"
             alt="Jirafa de origami 3D - Origami Consulting Group"
             width={480}
             height={482}
