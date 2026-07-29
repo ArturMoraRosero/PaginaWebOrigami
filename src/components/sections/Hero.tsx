@@ -111,6 +111,12 @@ export default function Hero() {
             >
               {t.hero.ctaServices}
             </a>
+            <a
+              href="/acceso-canal-corporativo-b2b-ecuador"
+              className="bg-transparent text-green/90 border border-green/40 px-9 py-4 rounded-full font-medium hover:bg-green/10 hover:text-green transition-all duration-300 text-center interactive"
+            >
+              {t.hero.ctaChannel}
+            </a>
           </motion.div>
         </div>
 

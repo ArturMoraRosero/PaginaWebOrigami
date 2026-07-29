@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Network, Gem, TrendingUp, Zap } from "lucide-react";
+import { Network, Gem, TrendingUp, Zap, Building2 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function PracticeAreas() {
@@ -96,6 +96,40 @@ export default function PracticeAreas() {
 
             </motion.div>
           ))}
+
+          {/* Featured clickable card → Corporate Channel landing */}
+          <motion.a
+            href="/acceso-canal-corporativo-b2b-ecuador"
+            initial={{ opacity: 0, y: 60 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
+            transition={{ duration: 0.8, delay: services.length * 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="group relative md:col-span-2 block bg-white border border-navy/10 rounded-[16px] p-8 md:p-10 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 ease-out hover:-translate-y-1 interactive"
+          >
+            <div className="absolute top-0 left-0 h-full w-1 border-l-[3px] border-green transition-all" />
+            <div className="absolute inset-x-0 w-[5px] top-0 bottom-0 bg-green origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-0 rounded-l-[16px]" />
+
+            <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              <div className="flex items-start gap-5">
+                <div className="w-12 h-12 shrink-0 rounded-full border border-green/20 bg-green/5 flex items-center justify-center group-hover:bg-green/10 transition-colors">
+                  <Building2 className="w-6 h-6 text-green" strokeWidth={1.5} />
+                </div>
+                <div>
+                  <span className="text-xs font-bold text-navy/50 uppercase tracking-widest mb-2 block group-hover:text-green/80 transition-colors">
+                    {t.practice.channelCard.tag}
+                  </span>
+                  <h3 className="text-2xl font-syne font-bold text-navy mb-2 group-hover:text-green-dk transition-colors">
+                    {t.practice.channelCard.title}
+                  </h3>
+                  <p className="text-text font-sans leading-relaxed max-w-2xl">
+                    {t.practice.channelCard.body}
+                  </p>
+                </div>
+              </div>
+              <span className="shrink-0 text-green font-bold tracking-wide whitespace-nowrap group-hover:translate-x-1 transition-transform">
+                {t.practice.channelCard.cta}
+              </span>
+            </div>
+          </motion.a>
         </div>
 
       </div>

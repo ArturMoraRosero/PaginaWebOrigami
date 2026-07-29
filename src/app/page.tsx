@@ -8,6 +8,7 @@ const FloatingWhatsApp = dynamic(() => import("@/components/ui/FloatingWhatsApp"
 const LogoMarquee = dynamic(() => import("@/components/sections/LogoMarquee"));
 const ProblemSection = dynamic(() => import("@/components/sections/ProblemSection"));
 const PracticeAreas = dynamic(() => import("@/components/sections/PracticeAreas"));
+const CorporateChannelSection = dynamic(() => import("@/components/sections/CorporateChannelSection"));
 const BrandValuationSection = dynamic(() => import("@/components/sections/BrandValuationSection"));
 const MethodologySection = dynamic(() => import("@/components/sections/MethodologySection"));
 const StrategicCase = dynamic(() => import("@/components/sections/StrategicCase"));
@@ -73,6 +74,7 @@ export default function Home() {
         <LogoMarquee />
         <ProblemSection />
         <PracticeAreas />
+        <CorporateChannelSection />
         <BrandValuationSection />
         <MethodologySection />
         <StrategicCase />

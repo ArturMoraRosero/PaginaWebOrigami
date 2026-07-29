@@ -16,6 +16,7 @@ export const dictionaries = {
       quote: "No improvisamos crecimiento. Lo estructuramos.",
       ctaStart: "Iniciar conversación",
       ctaServices: "Ver servicios",
+      ctaChannel: "Canal Corporativo B2B",
       scroll: "Scroll"
     },
     trusted: {
@@ -55,7 +56,24 @@ export const dictionaries = {
           body: "Activamos oportunidades y conexiones clave de alto impacto.",
         }
       ],
-      valuationNote: "Para procesos de venta, fusión o atracción de inversión."
+      valuationNote: "Para procesos de venta, fusión o atracción de inversión.",
+      channelCard: {
+        tag: "Canal Corporativo",
+        title: "Acceso al Canal Corporativo B2B",
+        body: "Introducimos su producto o servicio en empresas que compran a escala. Conectamos su oferta con gerencias, compras y recursos humanos que deciden.",
+        cta: "Ver servicio →"
+      }
+    },
+    corporateChannel: {
+      tag: "Acceso Corporativo",
+      title: "Introduzca su oferta en el canal corporativo",
+      text: "El canal corporativo no se abre con esfuerzo. Se abre con acceso. Conectamos su producto o servicio con los tomadores de decisión de las empresas de Ecuador.",
+      points: [
+        "Contacto directo con gerencias, compras y recursos humanos",
+        "Introducción de su oferta al portafolio corporativo",
+        "Ciclo comercial más corto y predecible"
+      ],
+      cta: "Conocer el servicio →"
     },
     valuation: {
       title: "¿Cuánto vale realmente su marca?",
@@ -204,6 +222,7 @@ export const dictionaries = {
       quote: "We don't improvise growth. We structure it.",
       ctaStart: "Start conversation",
       ctaServices: "View services",
+      ctaChannel: "B2B Corporate Channel",
       scroll: "Scroll"
     },
     trusted: {
@@ -243,7 +262,24 @@ export const dictionaries = {
           body: "We activate high-impact opportunities and key connections.",
         }
       ],
-      valuationNote: "For sales processes, mergers, or investment attraction."
+      valuationNote: "For sales processes, mergers, or investment attraction.",
+      channelCard: {
+        tag: "Corporate Channel",
+        title: "B2B Corporate Channel Access",
+        body: "We introduce your product or service into companies that buy at scale. We connect your offer with the managers, procurement and HR teams who decide.",
+        cta: "View service →"
+      }
+    },
+    corporateChannel: {
+      tag: "Corporate Access",
+      title: "Bring your offer into the corporate channel",
+      text: "The corporate channel doesn't open with effort. It opens with access. We connect your product or service with the decision-makers at Ecuador's companies.",
+      points: [
+        "Direct contact with management, procurement and HR",
+        "Introduction of your offer to the corporate portfolio",
+        "A shorter, more predictable sales cycle"
+      ],
+      cta: "Explore the service →"
     },
     valuation: {
       title: "How much is your brand really worth?",
