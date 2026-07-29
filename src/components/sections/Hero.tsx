@@ -133,20 +133,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* 3. Bottom Gradient Fade & Scroll Indicator */}
+      {/* 3. Bottom Gradient Fade */}
       <div className="absolute bottom-0 w-full h-24 bg-gradient-to-b from-transparent to-[#0A1628] z-[5] pointer-events-none" />
-
-      <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 pointer-events-none"
-        style={{ opacity }}
-      >
-        <span className="text-white/40 text-xs tracking-widest uppercase font-syne">{t.hero.scroll}</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="w-px h-12 bg-gradient-to-b from-green to-transparent"
-        />
-      </motion.div>
 
     </section>
   );
