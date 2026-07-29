@@ -16,7 +16,7 @@ export default function Navigation() {
     { name: t.nav.practice, href: "/#practica" },
     { name: t.nav.model, href: "/#modelo" },
     { name: t.nav.cases, href: "/#casos" },
-    { name: t.nav.insights, href: "/#insights-social" },
+    { name: t.nav.insights, href: "/insights" },
     { name: t.nav.valuation, href: "/valoracion" },
   ];
 

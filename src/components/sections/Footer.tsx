@@ -53,6 +53,7 @@ export default function Footer() {
           <div className="flex flex-col space-y-3 font-sans text-sm text-white/60">
             <a href="#practica" className="hover:text-green transition-colors w-fit">{t.footer.links.services}</a>
             <a href="#modelo" className="hover:text-green transition-colors w-fit">{t.footer.links.methodology}</a>
+            <a href="/insights" className="hover:text-green transition-colors w-fit">Insights</a>
             <a href="/valoracion" className="hover:text-green transition-colors w-fit">{t.footer.links.valuation}</a>
             <a href="#contacto" className="hover:text-green transition-colors w-fit">{t.footer.links.contact}</a>
             <div className="flex items-center gap-4 mt-3 pt-4 border-t border-white/10">

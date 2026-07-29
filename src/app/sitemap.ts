@@ -1,6 +1,22 @@
 import { MetadataRoute } from 'next'
+import { posts } from '@/content/posts'
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const insightsRoutes: MetadataRoute.Sitemap = [
+    {
+      url: 'https://www.oriconsultoria.com/insights',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    ...posts.map((post) => ({
+      url: `https://www.oriconsultoria.com/insights/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+  ]
+
   return [
     {
       url: 'https://www.oriconsultoria.com',
@@ -50,5 +66,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    ...insightsRoutes,
   ]
 }
