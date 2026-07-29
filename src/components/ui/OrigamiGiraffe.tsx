@@ -7,14 +7,23 @@ export default function OrigamiGiraffe({ className = "" }: { className?: string 
   const [phase, setPhase] = useState<"intro" | "loop">("intro");
   // Safari no soporta canal alfa en WebM → mantiene la imagen estática
   const [useVideo, setUseVideo] = useState(true);
+  // En móvil servimos una imagen ligera (13 KB) en vez de ~2 MB de video → mejora LCP
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const mobile = window.matchMedia("(max-width: 768px)").matches;
+    if (mobile) {
+      setIsMobile(true);
+      setUseVideo(false);
+      return; // no cargamos ni precargamos video en móvil
+    }
+
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     if (isSafari) {
       setUseVideo(false);
       return;
     }
-    // Precargar el loop mientras corre el intro para evitar el salto
+    // Escritorio Chrome: precargar el loop mientras corre el intro para evitar el salto
     const v = document.createElement("video");
     v.preload = "auto";
     v.src = "/jirafa-loop.webm";
@@ -50,13 +59,14 @@ export default function OrigamiGiraffe({ className = "" }: { className?: string 
             <source src={`/jirafa-${phase}.webm`} type="video/webm" />
           </video>
         ) : (
-          // Safari/iOS: APNG animado con transparencia (WebM alfa no soportado)
+          // Móvil: imagen ligera webp (13 KB). Escritorio Safari: APNG animado (WebM alfa no soportado).
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src="/jirafa-loop.png"
+            src={isMobile ? "/Jirafa_Premium_3D.webp" : "/jirafa-loop.png"}
             alt="Jirafa de origami 3D - Origami Consulting Group"
             width={480}
             height={482}
+            loading="eager"
             className="object-contain w-full h-full transform scale-110"
           />
         )}
