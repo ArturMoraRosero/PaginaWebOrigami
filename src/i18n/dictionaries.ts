@@ -177,6 +177,11 @@ export const dictionaries = {
         services: "Servicios",
         methodology: "Metodología",
         about: "Sobre nosotros",
+        corporateChannel: "Canal Corporativo B2B",
+        commercialConsulting: "Consultoría Comercial B2B",
+        salesStrategy: "Estrategia de Ventas B2B",
+        strategicAlliances: "Alianzas Estratégicas B2B",
+        increaseSales: "Cómo Aumentar Ventas B2B",
         valuation: "Valoración Clientes",
         contact: "Contacto"
       }
@@ -360,6 +365,11 @@ export const dictionaries = {
         services: "Services",
         methodology: "Methodology",
         about: "About us",
+        corporateChannel: "B2B Corporate Channel",
+        commercialConsulting: "B2B Commercial Consulting",
+        salesStrategy: "B2B Sales Strategy",
+        strategicAlliances: "B2B Strategic Alliances",
+        increaseSales: "How to Increase B2B Sales",
         valuation: "Client Valuation",
         contact: "Contact"
       }
