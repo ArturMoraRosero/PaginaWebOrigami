@@ -191,15 +191,17 @@ export const dictionaries = {
     footer: {
       description: "Estrategia & Valor. Consultoría empresarial, comprometida con el impacto.",
       city: "Quito - Ecuador",
+      b2bHeading: "Servicios B2B",
+      navHeading: "Navegación",
       links: {
         services: "Servicios",
         methodology: "Metodología",
         about: "Sobre nosotros",
-        corporateChannel: "Canal Corporativo B2B",
+        corporateChannel: "Canal Corporativo",
         commercialConsulting: "Consultoría Comercial B2B",
         salesStrategy: "Estrategia de Ventas B2B",
-        strategicAlliances: "Alianzas Estratégicas B2B",
-        increaseSales: "Cómo Aumentar Ventas B2B",
+        strategicAlliances: "Alianzas Estratégicas",
+        increaseSales: "Cómo Aumentar Ventas",
         valuation: "Valoración Clientes",
         contact: "Contacto"
       }
@@ -397,15 +399,17 @@ export const dictionaries = {
     footer: {
       description: "Strategy & Value. Business consulting, committed to impact.",
       city: "Quito - Ecuador",
+      b2bHeading: "B2B Services",
+      navHeading: "Navigation",
       links: {
         services: "Services",
         methodology: "Methodology",
         about: "About us",
-        corporateChannel: "B2B Corporate Channel",
+        corporateChannel: "Corporate Channel",
         commercialConsulting: "B2B Commercial Consulting",
         salesStrategy: "B2B Sales Strategy",
-        strategicAlliances: "B2B Strategic Alliances",
-        increaseSales: "How to Increase B2B Sales",
+        strategicAlliances: "Strategic Alliances",
+        increaseSales: "How to Increase Sales",
         valuation: "Client Valuation",
         contact: "Contact"
       }
