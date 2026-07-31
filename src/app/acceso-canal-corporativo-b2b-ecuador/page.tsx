@@ -17,14 +17,14 @@ const content = {
   h1: "Acceso al Canal Corporativo B2B en Ecuador",
   intro: {
     tag: "Nuestra Especialidad",
-    text: "El canal corporativo es el más difícil de abrir. No responde a esfuerzo comercial. Responde a acceso. Conectamos su producto o servicio con quien decide: gerencias, compras y recursos humanos en las empresas de Ecuador.",
+    text: "El canal corporativo es el más difícil de abrir. No responde a esfuerzo comercial. Responde a acceso. Conectamos su producto o servicio con quien decide: los tomadores de decisión de las empresas de Ecuador.",
   },
   definition: {
     title: "¿Qué es el acceso al canal corporativo?",
     text: "Es la vía directa para introducir su oferta en empresas que compran a escala. No es una lista de contactos. Es una arquitectura de relacionamiento con tomadores de decisión. Abrimos la conversación con quien firma, no con quien deriva.",
   },
   benefits: [
-    { title: "Acceso a Tomadores de Decisión", desc: "Llegamos a gerencias, direcciones de compras y recursos humanos sin intermediarios.", icon: Users },
+    { title: "Acceso a Tomadores de Decisión", desc: "Llegamos directamente a quien decide dentro de la empresa, sin intermediarios.", icon: Users },
     { title: "Introducción de su Oferta", desc: "Posicionamos su producto o servicio dentro del portafolio de proveedores corporativos.", icon: Package },
     { title: "Relaciones Existentes", desc: "Activamos vínculos ya construidos con empresas líderes del país.", icon: Handshake },
     { title: "Ciclo Comercial Más Corto", desc: "Reducimos el tiempo entre el primer contacto y la decisión de compra.", icon: Zap },
@@ -44,8 +44,8 @@ const content = {
   },
   examples: [
     { title: "Proveedores Corporativos", desc: "Empresas que buscan entrar al portafolio de compras de grandes cuentas." },
-    { title: "Servicios a Recursos Humanos", desc: "Beneficios, capacitación y bienestar para el área de talento." },
-    { title: "Productos B2B", desc: "Bienes y equipos que requieren aprobación de gerencia o compras." },
+    { title: "Servicios Corporativos", desc: "Soluciones que se contratan a nivel directivo para toda la organización." },
+    { title: "Productos B2B", desc: "Bienes y equipos que requieren aprobación de los tomadores de decisión." },
     { title: "Nuevos Entrantes al Mercado", desc: "Marcas que llegan a Ecuador y necesitan acceso al canal corporativo." },
   ],
   results: {
@@ -100,7 +100,7 @@ export default function B2BCorporateChannelPage() {
               "name": "Origami Consulting Group"
             },
             "areaServed": "Ecuador",
-            "description": "Consultoría para introducir productos y servicios en el canal corporativo de Ecuador, mediante acceso directo a gerentes, compras y recursos humanos que toman decisiones."
+            "description": "Consultoría para introducir productos y servicios en el canal corporativo de Ecuador, mediante acceso directo a los tomadores de decisión de las empresas."
           })
         }}
       />
