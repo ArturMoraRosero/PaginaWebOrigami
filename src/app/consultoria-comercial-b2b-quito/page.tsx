@@ -5,6 +5,9 @@ import { motion, useInView } from "framer-motion";
 import { Network, Users, ShieldCheck, MapPin, MessageCircle, TrendingUp, Zap } from "lucide-react";
 import dynamic from "next/dynamic";
 import Navigation from "@/components/ui/Navigation";
+import FaqSection from "@/components/sections/FaqSection";
+import { faqsQuito, FAQ_UPDATED_AT } from "@/content/faqs";
+import { serviceSchema, SITE_URL } from "@/lib/schema";
 
 const Footer = dynamic(() => import("@/components/sections/Footer"));
 const FloatingWhatsApp = dynamic(() => import("@/components/ui/FloatingWhatsApp"));
@@ -95,17 +98,16 @@ export default function B2BQuitoPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Consultoría Comercial B2B en Quito",
-            "provider": {
-              "@type": "Organization",
-              "name": "Origami Consulting Group"
-            },
-            "areaServed": "Quito, Ecuador",
-            "description": "Servicios especializados de consultoría comercial B2B para empresas que buscan escalar su facturación y alianzas estratégicas en Quito."
-          })
+          __html: JSON.stringify(
+            serviceSchema({
+              name: "Consultoría Comercial B2B en Quito",
+              serviceType: "Consultoría comercial B2B",
+              areaServed: "Quito, Ecuador",
+              url: `${SITE_URL}/consultoria-comercial-b2b-quito`,
+              description:
+                "Consultoría comercial B2B para empresas con operación en Quito: arquitectura de prospección, optimización del ciclo de venta y estructuración de equipos comerciales.",
+            })
+          )
         }}
       />
 
@@ -240,6 +242,8 @@ export default function B2BQuitoPage() {
               </div>
            </div>
         </section>
+
+        <FaqSection faqs={faqsQuito} updatedAt={FAQ_UPDATED_AT} />
 
         <section id="contacto">
           <Contact />

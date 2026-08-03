@@ -5,6 +5,9 @@ import { motion, useInView } from "framer-motion";
 import { Network, TrendingUp, Zap, Target, ShieldCheck, BarChart3, MapPin, MessageCircle, PieChart, ArrowRight } from "lucide-react";
 import dynamic from "next/dynamic";
 import Navigation from "@/components/ui/Navigation";
+import FaqSection from "@/components/sections/FaqSection";
+import { faqsEstrategiaVentas, FAQ_UPDATED_AT } from "@/content/faqs";
+import { serviceSchema, SITE_URL } from "@/lib/schema";
 
 const Footer = dynamic(() => import("@/components/sections/Footer"));
 const FloatingWhatsApp = dynamic(() => import("@/components/ui/FloatingWhatsApp"));
@@ -88,17 +91,16 @@ export default function B2BSalesStrategyPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Estrategia de Ventas B2B en Ecuador",
-            "provider": {
-              "@type": "Organization",
-              "name": "Origami Consulting Group"
-            },
-            "areaServed": "Ecuador",
-            "description": "Consultoría especializada en el diseño e implementación de estrategias de ventas B2B para empresas ecuatorianas."
-          })
+          __html: JSON.stringify(
+            serviceSchema({
+              name: "Estrategia de Ventas B2B en Ecuador",
+              serviceType: "Estrategia de ventas B2B",
+              areaServed: "Ecuador",
+              url: `${SITE_URL}/estrategia-de-ventas-b2b-ecuador`,
+              description:
+                "Diseño e implementación de estrategias de ventas B2B para empresas ecuatorianas: perfil de cliente ideal, arquitectura de pipeline, cadencia de prospección y métricas de gestión.",
+            })
+          )
         }}
       />
 
@@ -248,6 +250,8 @@ export default function B2BSalesStrategyPage() {
               ))}
            </div>
         </section>
+
+        <FaqSection faqs={faqsEstrategiaVentas} updatedAt={FAQ_UPDATED_AT} />
 
         <section id="contacto">
           <Contact />

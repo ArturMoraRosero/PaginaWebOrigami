@@ -5,6 +5,9 @@ import { motion, useInView } from "framer-motion";
 import { Users, ShieldCheck, MapPin, MessageCircle, Handshake, Globe, Rocket, Layers, ChevronRight } from "lucide-react";
 import dynamic from "next/dynamic";
 import Navigation from "@/components/ui/Navigation";
+import FaqSection from "@/components/sections/FaqSection";
+import { faqsAlianzas, FAQ_UPDATED_AT } from "@/content/faqs";
+import { serviceSchema, SITE_URL } from "@/lib/schema";
 
 const Footer = dynamic(() => import("@/components/sections/Footer"));
 const FloatingWhatsApp = dynamic(() => import("@/components/ui/FloatingWhatsApp"));
@@ -91,17 +94,16 @@ export default function B2BAlliancesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Alianzas Estratégicas B2B en Ecuador",
-            "provider": {
-              "@type": "Organization",
-              "name": "Origami Consulting Group"
-            },
-            "areaServed": "Ecuador",
-            "description": "Servicios de consultoría para la identificación, estructuración y gestión de alianzas estratégicas B2B en Ecuador."
-          })
+          __html: JSON.stringify(
+            serviceSchema({
+              name: "Alianzas Estratégicas B2B en Ecuador",
+              serviceType: "Arquitectura de alianzas estratégicas",
+              areaServed: "Ecuador",
+              url: `${SITE_URL}/alianzas-estrategicas-b2b-ecuador`,
+              description:
+                "Identificación, estructuración y gobierno de alianzas estratégicas B2B en Ecuador: selección de aliados complementarios, diseño del acuerdo y métricas compartidas.",
+            })
+          )
         }}
       />
 
@@ -237,6 +239,8 @@ export default function B2BAlliancesPage() {
               </div>
            </div>
         </section>
+
+        <FaqSection faqs={faqsAlianzas} updatedAt={FAQ_UPDATED_AT} />
 
         <section id="contacto">
           <Contact />

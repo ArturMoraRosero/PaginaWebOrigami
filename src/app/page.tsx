@@ -1,6 +1,9 @@
 import dynamic from "next/dynamic";
 import Navigation from "@/components/ui/Navigation";
 import Hero from "@/components/sections/Hero";
+import FaqSection from "@/components/sections/FaqSection";
+import { faqsHome, FAQ_UPDATED_AT } from "@/content/faqs";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 
 // Lazy load below-the-fold components
 const Scene = dynamic(() => import("@/components/Scene"));
@@ -21,44 +24,11 @@ const Footer = dynamic(() => import("@/components/sections/Footer"));
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-surface selection:bg-green selection:text-white overflow-hidden">
-      {/* JSON-LD Organization Structured Data */}
+      {/* JSON-LD: entidad Origami + sitio web (fuente única en src/lib/schema.ts) */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ProfessionalService",
-            "name": "Origami Consulting Group",
-            "url": "https://www.oriconsultoria.com",
-            "logo": "https://www.oriconsultoria.com/logo-header-light.png",
-            "image": "https://www.oriconsultoria.com/brand-valuation-premium.png",
-            "description": "Firma boutique de consultoría estratégica en Quito. Acompañamos a CEOs en expansión comercial, alianzas B2B y valoración estratégica.",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Av. Eloy Alfaro y Pasaje A, Edificio Murano",
-              "addressLocality": "Quito",
-              "addressRegion": "Pichincha",
-              "postalCode": "170102",
-              "addressCountry": "EC"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": -0.1703472,
-              "longitude": -78.470309
-            },
-            "telephone": "+593985141999",
-            "openingHoursSpecification": [
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "08:30",
-                "closes": "18:30"
-              }
-            ],
-            "sameAs": [
-              "https://www.linkedin.com/company/origami-consulting-group-sas/"
-            ]
-          })
+          __html: JSON.stringify([organizationSchema, websiteSchema])
         }}
       />
       
@@ -81,6 +51,7 @@ export default function Home() {
         <Distinctions />
         <QuoteSection />
         <SocialInsights />
+        <FaqSection faqs={faqsHome} updatedAt={FAQ_UPDATED_AT} />
         <Contact />
       </div>
 

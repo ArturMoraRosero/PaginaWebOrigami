@@ -5,6 +5,9 @@ import { motion, useInView } from "framer-motion";
 import { Users, Package, Handshake, Zap, ShieldCheck, MapPin, MessageCircle, Building2, ChevronRight, DoorOpen } from "lucide-react";
 import dynamic from "next/dynamic";
 import Navigation from "@/components/ui/Navigation";
+import FaqSection from "@/components/sections/FaqSection";
+import { faqsCanalCorporativo, FAQ_UPDATED_AT } from "@/content/faqs";
+import { serviceSchema, SITE_URL } from "@/lib/schema";
 
 const Footer = dynamic(() => import("@/components/sections/Footer"));
 const FloatingWhatsApp = dynamic(() => import("@/components/ui/FloatingWhatsApp"));
@@ -91,17 +94,16 @@ export default function B2BCorporateChannelPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "name": "Acceso al Canal Corporativo B2B en Ecuador",
-            "provider": {
-              "@type": "Organization",
-              "name": "Origami Consulting Group"
-            },
-            "areaServed": "Ecuador",
-            "description": "Consultoría para introducir productos y servicios en el canal corporativo de Ecuador, mediante acceso directo a los tomadores de decisión de las empresas."
-          })
+          __html: JSON.stringify(
+            serviceSchema({
+              name: "Acceso al Canal Corporativo B2B en Ecuador",
+              serviceType: "Acceso al canal corporativo B2B",
+              areaServed: "Ecuador",
+              url: `${SITE_URL}/acceso-canal-corporativo-b2b-ecuador`,
+              description:
+                "Introducción de productos y servicios en el canal corporativo ecuatoriano mediante acceso directo a gerencias de compras, recursos humanos y unidades de negocio que deciden.",
+            })
+          )
         }}
       />
 
@@ -238,6 +240,8 @@ export default function B2BCorporateChannelPage() {
               </div>
            </div>
         </section>
+
+        <FaqSection faqs={faqsCanalCorporativo} updatedAt={FAQ_UPDATED_AT} />
 
         <section id="contacto">
           <Contact />

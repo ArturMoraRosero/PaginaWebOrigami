@@ -4,6 +4,9 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { BookOpen, AlertCircle, Users, Target, BarChart, Settings, MessageCircle, ArrowRight } from "lucide-react";
 import Navigation from "@/components/ui/Navigation";
+import FaqSection from "@/components/sections/FaqSection";
+import { faqsAumentarVentas, FAQ_UPDATED_AT } from "@/content/faqs";
+import { ORGANIZATION_ID, SITE_URL } from "@/lib/schema";
 import Footer from "@/components/sections/Footer";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 import Scene from "@/components/Scene";
@@ -92,56 +95,22 @@ export default function B2BSalesBlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            {
-              "@context": "https://schema.org",
-              "@type": "BlogPosting",
-              "headline": "Cómo aumentar ventas B2B en Ecuador | Guía práctica",
-              "description": "Descubra estrategias efectivas para escalar el rendimiento comercial de su empresa en el mercado B2B ecuatoriano.",
-              "author": {
-                "@type": "Organization",
-                "name": "Origami Consulting Group"
-              },
-              "publisher": {
-                "@type": "Organization",
-                "name": "Origami Consulting Group"
-              },
-              "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "https://www.oriconsultoria.com/como-aumentar-ventas-b2b-ecuador"
-              }
-            },
-            {
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "¿Cómo aumentar las ventas B2B en el mercado ecuatoriano?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Para aumentar las ventas B2B en Ecuador es fundamental profesionalizar el proceso comercial, implementar un CRM para el seguimiento y enfocar los esfuerzos en un Perfil de Cliente Ideal (ICP) rentable."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "¿Por qué contratar una consultoría comercial en Quito?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Una consultoría local en Quito ofrece conocimiento profundo del ecosistema empresarial andino y permite una conexión directa con los centros de decisión más importantes del país."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "¿Cuál es el error más común en las ventas B2B en Ecuador?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "El error más común es depender exclusivamente de referidos y relaciones personales sin contar con un sistema escalable y predecible de prospección directa."
-                  }
-                }
-              ]
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "Cómo aumentar ventas B2B en Ecuador | Guía práctica",
+            "description":
+              "Guía práctica para escalar el rendimiento comercial B2B en el mercado ecuatoriano sin ampliar la fuerza de ventas.",
+            "inLanguage": "es-EC",
+            "datePublished": "2026-07-29",
+            "dateModified": FAQ_UPDATED_AT,
+            "author": { "@type": "Organization", "@id": ORGANIZATION_ID, "name": "Origami Consulting Group" },
+            "publisher": { "@type": "Organization", "@id": ORGANIZATION_ID, "name": "Origami Consulting Group" },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `${SITE_URL}/como-aumentar-ventas-b2b-ecuador`
             }
-          ])
+          })
         }}
       />
 
@@ -253,6 +222,8 @@ export default function B2BSalesBlogPage() {
               </div>
            </div>
         </section>
+
+        <FaqSection faqs={faqsAumentarVentas} updatedAt={FAQ_UPDATED_AT} />
 
         <section id="contacto">
           <Contact />
