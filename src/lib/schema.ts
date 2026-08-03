@@ -25,19 +25,26 @@ export const organizationSchema = {
   slogan: 'No solo diseñamos estrategia. Creamos valor estructurado.',
   priceRange: '$$$',
   currenciesAccepted: 'USD',
+  // Dirección oficial única. Debe coincidir CARÁCTER POR CARÁCTER con el
+  // Perfil de Negocio de Google, LinkedIn y los directorios: los motores
+  // cruzan nombre-dirección-teléfono (NAP) para confirmar que las fuentes
+  // hablan de la misma empresa.
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Av. Eloy Alfaro y Pasaje A, Edificio Murano',
+    streetAddress: 'Av. Eloy Alfaro y Pasaje A, Edificio Diamond Signature',
     addressLocality: 'Quito',
     addressRegion: 'Pichincha',
     postalCode: '170102',
     addressCountry: 'EC',
   },
+  // Coordenadas exactas del plus code RGHM+W6R (Edificio Diamond Signature,
+  // Jardines del Batán). Deben coincidir con el pin del Perfil de Negocio.
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: -0.1703472,
-    longitude: -78.470309,
+    latitude: -0.1701375,
+    longitude: -78.4669844,
   },
+  hasMap: 'https://www.google.com/maps/place/Origami+Consulting+Group/data=!4m2!3m1!1s0x0:0xfea273f245a53f9c',
   telephone: '+593985141999',
   email: 'alianzas@oriconsultoria.com',
   availableLanguage: ['es', 'en'],
@@ -65,7 +72,14 @@ export const organizationSchema = {
       closes: '18:30',
     },
   ],
-  sameAs: ['https://www.linkedin.com/company/origami-consulting-group-sas/'],
+  // Perfiles externos que confirman la entidad. Cuantas más fuentes
+  // independientes, más fácil le resulta a un motor distinguir a esta Origami
+  // de las homónimas en otros países.
+  sameAs: [
+    'https://www.linkedin.com/company/origami-consulting-group-sas/',
+    'https://www.instagram.com/origamiconsultingroup/',
+    'https://www.google.com/maps/place/Origami+Consulting+Group/@-0.170315,-78.4682598,17z/data=!4m6!3m5!1s0x28c5890088e600f1:0xfea273f245a53f9c',
+  ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Servicios de consultoría estratégica',

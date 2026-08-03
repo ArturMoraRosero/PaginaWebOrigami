@@ -20,7 +20,7 @@ export default function Footer() {
           />
           <p className="font-sans text-white/50 text-sm max-w-sm mb-6">
             {t.footer.description}<br/>
-            Cumbayá, Quito - Ecuador<br/>
+            Av. Eloy Alfaro y Pasaje A, Edificio Diamond Signature — Quito, Ecuador<br/>
             <span className="text-white/30 text-[10px] mt-2 block">
               Cobertura estratégica: Quito, Guayaquil, Cuenca y expansión regional.
             </span>
@@ -51,6 +51,7 @@ export default function Footer() {
             {t.footer.navHeading}
           </span>
           <div className="flex flex-col space-y-3 font-sans text-sm text-white/60">
+            <a href="/nosotros" className="hover:text-green transition-colors w-fit">{t.footer.links.about}</a>
             <a href="#practica" className="hover:text-green transition-colors w-fit">{t.footer.links.services}</a>
             <a href="#modelo" className="hover:text-green transition-colors w-fit">{t.footer.links.methodology}</a>
             <a href="/insights" className="hover:text-green transition-colors w-fit">Insights</a>
