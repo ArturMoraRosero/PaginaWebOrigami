@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function OrigamiGiraffe({ className = "" }: { className?: string }) {
-  const [phase, setPhase] = useState<"intro" | "loop">("intro");
+  // Sin animación de intro (explosión): arranca directo en el loop
+  const phase = "loop";
   // Safari no soporta canal alfa en WebM → mantiene la imagen estática
   const [useVideo, setUseVideo] = useState(true);
   // En móvil servimos una imagen ligera (13 KB) en vez de ~2 MB de video → mejora LCP
@@ -21,12 +22,7 @@ export default function OrigamiGiraffe({ className = "" }: { className?: string 
     const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
     if (isSafari) {
       setUseVideo(false);
-      return;
     }
-    // Escritorio Chrome: precargar el loop mientras corre el intro para evitar el salto
-    const v = document.createElement("video");
-    v.preload = "auto";
-    v.src = "/jirafa-loop.webm";
   }, []);
 
   return (
@@ -42,17 +38,13 @@ export default function OrigamiGiraffe({ className = "" }: { className?: string 
       <div className="relative w-full h-[120%] flex justify-center items-center">
         {useVideo ? (
           <video
-            key={phase}
             autoPlay
             muted
             playsInline
-            loop={phase === "loop"}
+            loop
             poster="/Jirafa_Premium_3D.webp"
             width={1080}
             height={1084}
-            onEnded={() => {
-              if (phase === "intro") setPhase("loop");
-            }}
             aria-label="Jirafa de origami 3D - Origami Consulting Group"
             className="object-contain w-full h-full transform scale-110"
           >
