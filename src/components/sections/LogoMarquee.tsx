@@ -17,10 +17,14 @@ const LOGOS: { name: string; src: string; treatment: Treatment }[] = [
   { name: "METALTRONIC GROUP", src: "/logos/metaltronic.png", treatment: "invert" },
 ];
 
+// Los hovers se limitan a dispositivos con puntero real: en táctil el :hover
+// se queda "pegado" tras un tap y deja logos congelados o atenuados.
 const TREATMENT_CLASSES: Record<Treatment, string> = {
-  invert: "brightness-0 invert opacity-80 md:opacity-40 group-hover/logo:brightness-100 group-hover/logo:invert-0 group-hover/logo:opacity-100",
-  mono: "brightness-0 invert opacity-80 md:opacity-40 group-hover/logo:opacity-90",
-  original: "opacity-90 md:opacity-60 saturate-[0.3] group-hover/logo:opacity-100 group-hover/logo:saturate-100",
+  invert:
+    "brightness-0 invert opacity-80 md:opacity-40 [@media(hover:hover)]:group-hover/logo:brightness-100 [@media(hover:hover)]:group-hover/logo:invert-0 [@media(hover:hover)]:group-hover/logo:opacity-100",
+  mono: "brightness-0 invert opacity-80 md:opacity-40 [@media(hover:hover)]:group-hover/logo:opacity-90",
+  original:
+    "opacity-90 md:opacity-60 saturate-[0.3] [@media(hover:hover)]:group-hover/logo:opacity-100 [@media(hover:hover)]:group-hover/logo:saturate-100",
 };
 
 function LogoItem({ name, src, treatment }: { name: string; src: string; treatment: Treatment }) {
@@ -37,9 +41,11 @@ function LogoItem({ name, src, treatment }: { name: string; src: string; treatme
         <img
           src={src}
           alt={name}
-          loading="lazy"
+          loading="eager"
+          decoding="async"
+          draggable={false}
           onError={() => setFailed(true)}
-          className={`h-9 md:h-11 w-auto max-w-[180px] object-contain transition-all duration-500 group-hover/logo:scale-110 ${TREATMENT_CLASSES[treatment]}`}
+          className={`h-9 md:h-11 w-auto max-w-[180px] object-contain transition-all duration-500 [transform:translateZ(0)] [backface-visibility:hidden] [@media(hover:hover)]:group-hover/logo:scale-110 ${TREATMENT_CLASSES[treatment]}`}
         />
       )}
     </div>
@@ -56,7 +62,7 @@ export default function LogoMarquee() {
       </p>
 
       <div className="group relative [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
-        <div className="flex w-max animate-[marquee_35s_linear_infinite] group-hover:[animation-play-state:paused] motion-reduce:[animation-play-state:paused]">
+        <div className="flex w-max animate-[marquee_35s_linear_infinite] will-change-transform [transform:translateZ(0)] [backface-visibility:hidden] [@media(hover:hover)]:group-hover:[animation-play-state:paused] motion-reduce:[animation-play-state:paused]">
           {[...LOGOS, ...LOGOS].map((logo, i) => (
             <LogoItem key={`${logo.name}-${i}`} name={logo.name} src={logo.src} treatment={logo.treatment} />
           ))}
