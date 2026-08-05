@@ -216,7 +216,13 @@ export default function B2BCorporateChannelPage() {
         </section>
 
         {/* RESULTS SECTION */}
-        <section className="bg-navy py-24 md:py-32 px-6">
+        <section className="relative isolate overflow-hidden bg-navy py-24 md:py-32 px-6">
+          <video autoPlay muted loop playsInline aria-hidden="true"
+            className="absolute inset-0 -z-20 w-full h-full object-cover opacity-60 motion-reduce:hidden">
+            <source src="/jirafa-nubes-banda.webm" type="video/webm" />
+            <source src="/jirafa-nubes-banda.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 -z-10 bg-[#16233f]/88" aria-hidden="true"></div>
            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
               <div className="lg:w-1/2">
                 <SectionHeader tag="Impacto" title={content.results.title} dark />
