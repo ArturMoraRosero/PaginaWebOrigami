@@ -5,7 +5,11 @@ import { useLanguage } from "@/context/LanguageContext";
 
 type Treatment = "invert" | "mono" | "original";
 
-const LOGOS: { name: string; src: string; treatment: Treatment }[] = [
+type Logo = { name: string; src: string; treatment: Treatment; wide?: boolean };
+
+// `wide`: wordmarks de proporción muy alargada (ratio > 8:1). Se limitan por
+// ancho en vez de por alto para que no invadan la franja completa en móvil.
+const LOGOS: Logo[] = [
   { name: "KIYÚ", src: "/logos/kiyu.png", treatment: "mono" },
   { name: "UMCO", src: "/logos/umco.png", treatment: "original" },
   { name: "HEDGEHOG BRAND", src: "/logos/hedgehog.png", treatment: "mono" },
@@ -15,6 +19,7 @@ const LOGOS: { name: string; src: string; treatment: Treatment }[] = [
   { name: "ALTIDAT", src: "/logos/altidat.png", treatment: "invert" },
   { name: "CLICKHOME", src: "/logos/clickhome.png", treatment: "invert" },
   { name: "METALTRONIC GROUP", src: "/logos/metaltronic.png", treatment: "invert" },
+  { name: "HIPERTRONICS", src: "/logos/hipertronics.png", treatment: "invert", wide: true },
 ];
 
 // Los hovers se limitan a dispositivos con puntero real: en táctil el :hover
@@ -27,8 +32,11 @@ const TREATMENT_CLASSES: Record<Treatment, string> = {
     "opacity-90 md:opacity-60 saturate-[0.3] [@media(hover:hover)]:group-hover/logo:opacity-100 [@media(hover:hover)]:group-hover/logo:saturate-100",
 };
 
-function LogoItem({ name, src, treatment }: { name: string; src: string; treatment: Treatment }) {
+function LogoItem({ name, src, treatment, wide }: Logo) {
   const [failed, setFailed] = useState(false);
+  const box = wide
+    ? "max-h-6 md:max-h-7 max-w-[190px] md:max-w-[260px]"
+    : "max-h-9 md:max-h-11 max-w-[180px]";
 
   return (
     <div className="flex items-center justify-center shrink-0 px-10 md:px-14 h-20 group/logo interactive cursor-default">
@@ -45,7 +53,7 @@ function LogoItem({ name, src, treatment }: { name: string; src: string; treatme
           decoding="async"
           draggable={false}
           onError={() => setFailed(true)}
-          className={`h-9 md:h-11 w-auto max-w-[180px] object-contain transition-all duration-500 [transform:translateZ(0)] [backface-visibility:hidden] [@media(hover:hover)]:group-hover/logo:scale-110 ${TREATMENT_CLASSES[treatment]}`}
+          className={`h-auto w-auto ${box} object-contain transition-all duration-500 [transform:translateZ(0)] [backface-visibility:hidden] [@media(hover:hover)]:group-hover/logo:scale-110 ${TREATMENT_CLASSES[treatment]}`}
         />
       )}
     </div>
@@ -64,7 +72,7 @@ export default function LogoMarquee() {
       <div className="group relative [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
         <div className="flex w-max animate-[marquee_35s_linear_infinite] will-change-transform [transform:translateZ(0)] [backface-visibility:hidden] [@media(hover:hover)]:group-hover:[animation-play-state:paused] motion-reduce:[animation-play-state:paused]">
           {[...LOGOS, ...LOGOS].map((logo, i) => (
-            <LogoItem key={`${logo.name}-${i}`} name={logo.name} src={logo.src} treatment={logo.treatment} />
+            <LogoItem key={`${logo.name}-${i}`} {...logo} />
           ))}
         </div>
       </div>
