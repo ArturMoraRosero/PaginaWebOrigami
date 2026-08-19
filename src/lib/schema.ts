@@ -23,6 +23,10 @@ export const organizationSchema = {
   description:
     'Firma boutique de consultoría estratégica con base en Quito, Ecuador. Acompaña a CEOs y equipos directivos en estructuración del crecimiento comercial B2B, arquitectura de alianzas estratégicas, acceso al canal corporativo y valoración estratégica de marca.',
   slogan: 'No solo diseñamos estrategia. Creamos valor estructurado.',
+  // Año de constitución. Refuerza la desambiguación frente a las otras firmas
+  // homónimas (Sudáfrica, Etiopía, EE. UU.) y debe coincidir con el año
+  // declarado en los perfiles de directorio.
+  foundingDate: '2022',
   priceRange: '$$$',
   currenciesAccepted: 'USD',
   // Dirección oficial única. Debe coincidir CARÁCTER POR CARÁCTER con el

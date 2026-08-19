@@ -16,12 +16,11 @@ import type { Faq } from "@/lib/schema";
 export const ABOUT_UPDATED_AT = "2026-08-02";
 
 /**
- * Año de constitución de la firma.
- * PENDIENTE DE CONFIRMAR por Artur. Mientras sea null no se emite
- * `foundingDate` en el schema ni se muestra en la ficha — mejor omitir un dato
- * que publicar uno incorrecto.
+ * Año de constitución de la firma. Confirmado por Artur el 19-ago-2026.
+ * Alimenta `foundingDate` en el JSON-LD de /nosotros y la ficha de identidad.
+ * Debe coincidir con el año declarado en los perfiles de directorio.
  */
-export const FOUNDING_YEAR: number | null = null;
+export const FOUNDING_YEAR: number | null = 2022;
 
 /** Ficha de identidad. Formato tabla: es el que los modelos extraen mejor. */
 export const firmFacts: { label: string; value: string }[] = [
