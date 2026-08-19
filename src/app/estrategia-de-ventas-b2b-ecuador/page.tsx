@@ -6,6 +6,7 @@ import { Network, TrendingUp, Zap, Target, ShieldCheck, BarChart3, MapPin, Messa
 import dynamic from "next/dynamic";
 import Navigation from "@/components/ui/Navigation";
 import FaqSection from "@/components/sections/FaqSection";
+import RelatedLinks from "@/components/sections/RelatedLinks";
 import { faqsEstrategiaVentas, FAQ_UPDATED_AT } from "@/content/faqs";
 import { serviceSchema, SITE_URL } from "@/lib/schema";
 
@@ -252,6 +253,8 @@ export default function B2BSalesStrategyPage() {
         </section>
 
         <FaqSection faqs={faqsEstrategiaVentas} updatedAt={FAQ_UPDATED_AT} />
+
+        <RelatedLinks path="/estrategia-de-ventas-b2b-ecuador" />
 
         <section id="contacto">
           <Contact />

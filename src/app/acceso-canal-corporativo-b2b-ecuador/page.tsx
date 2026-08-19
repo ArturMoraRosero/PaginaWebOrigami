@@ -6,6 +6,7 @@ import { Users, Package, Handshake, Zap, ShieldCheck, MapPin, MessageCircle, Bui
 import dynamic from "next/dynamic";
 import Navigation from "@/components/ui/Navigation";
 import FaqSection from "@/components/sections/FaqSection";
+import RelatedLinks from "@/components/sections/RelatedLinks";
 import { faqsCanalCorporativo, FAQ_UPDATED_AT } from "@/content/faqs";
 import { serviceSchema, SITE_URL } from "@/lib/schema";
 
@@ -251,6 +252,8 @@ export default function B2BCorporateChannelPage() {
         </section>
 
         <FaqSection faqs={faqsCanalCorporativo} updatedAt={FAQ_UPDATED_AT} />
+
+        <RelatedLinks path="/acceso-canal-corporativo-b2b-ecuador" />
 
         <section id="contacto">
           <Contact />

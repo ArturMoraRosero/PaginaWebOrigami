@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { BookOpen, AlertCircle, Users, Target, BarChart, Settings, MessageCircle, ArrowRight } from "lucide-react";
 import Navigation from "@/components/ui/Navigation";
 import FaqSection from "@/components/sections/FaqSection";
+import RelatedLinks from "@/components/sections/RelatedLinks";
 import { faqsAumentarVentas, FAQ_UPDATED_AT } from "@/content/faqs";
 import { ORGANIZATION_ID, SITE_URL } from "@/lib/schema";
 import Footer from "@/components/sections/Footer";
@@ -224,6 +225,8 @@ export default function B2BSalesBlogPage() {
         </section>
 
         <FaqSection faqs={faqsAumentarVentas} updatedAt={FAQ_UPDATED_AT} />
+
+        <RelatedLinks path="/como-aumentar-ventas-b2b-ecuador" />
 
         <section id="contacto">
           <Contact />

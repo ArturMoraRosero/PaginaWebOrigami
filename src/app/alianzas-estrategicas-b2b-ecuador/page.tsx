@@ -6,6 +6,7 @@ import { Users, ShieldCheck, MapPin, MessageCircle, Handshake, Globe, Rocket, La
 import dynamic from "next/dynamic";
 import Navigation from "@/components/ui/Navigation";
 import FaqSection from "@/components/sections/FaqSection";
+import RelatedLinks from "@/components/sections/RelatedLinks";
 import { faqsAlianzas, FAQ_UPDATED_AT } from "@/content/faqs";
 import { serviceSchema, SITE_URL } from "@/lib/schema";
 
@@ -241,6 +242,8 @@ export default function B2BAlliancesPage() {
         </section>
 
         <FaqSection faqs={faqsAlianzas} updatedAt={FAQ_UPDATED_AT} />
+
+        <RelatedLinks path="/alianzas-estrategicas-b2b-ecuador" />
 
         <section id="contacto">
           <Contact />

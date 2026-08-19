@@ -6,6 +6,7 @@ import { Network, Users, ShieldCheck, MapPin, MessageCircle, TrendingUp, Zap } f
 import dynamic from "next/dynamic";
 import Navigation from "@/components/ui/Navigation";
 import FaqSection from "@/components/sections/FaqSection";
+import RelatedLinks from "@/components/sections/RelatedLinks";
 import { faqsQuito, FAQ_UPDATED_AT } from "@/content/faqs";
 import { serviceSchema, SITE_URL } from "@/lib/schema";
 
@@ -244,6 +245,8 @@ export default function B2BQuitoPage() {
         </section>
 
         <FaqSection faqs={faqsQuito} updatedAt={FAQ_UPDATED_AT} />
+
+        <RelatedLinks path="/consultoria-comercial-b2b-quito" />
 
         <section id="contacto">
           <Contact />

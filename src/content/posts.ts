@@ -18,6 +18,14 @@ export interface Post {
   readingMinutes: number;
   // CTA interno hacia la landing que convierte
   related: { label: string; href: string };
+  /**
+   * Enlaces secundarios hacia otras landings de servicio.
+   * SEO: el CTA `related` es uno solo por artículo, lo que dejaba a
+   * /estrategia-de-ventas-b2b-ecuador y /alianzas-estrategicas-b2b-ecuador sin
+   * ningún enlace editorial entrante. Estos enlaces de texto reparten esa
+   * autoridad sin tocar el CTA principal.
+   */
+  alsoSee?: { label: string; href: string }[];
   body: Block[];
 }
 
@@ -42,6 +50,10 @@ export const posts: Post[] = [
       label: "Conoce cómo abrimos el canal corporativo",
       href: "/acceso-canal-corporativo-b2b-ecuador",
     },
+    alsoSee: [
+      { label: "Alianzas estratégicas B2B en Ecuador", href: "/alianzas-estrategicas-b2b-ecuador" },
+      { label: "Estrategia de ventas B2B en Ecuador", href: "/estrategia-de-ventas-b2b-ecuador" },
+    ],
     body: [
       { type: "p", text: "El canal corporativo es el más rentable de Ecuador. También el más cerrado." },
       { type: "p", text: "No se abre con más esfuerzo comercial. Se abre con acceso a quien decide." },
@@ -136,6 +148,10 @@ export const posts: Post[] = [
       label: "Conoce cómo abrimos el canal corporativo",
       href: "/acceso-canal-corporativo-b2b-ecuador",
     },
+    alsoSee: [
+      { label: "Estrategia de ventas B2B en Ecuador", href: "/estrategia-de-ventas-b2b-ecuador" },
+      { label: "Consultoría comercial B2B en Quito", href: "/consultoria-comercial-b2b-quito" },
+    ],
     body: [
       { type: "p", text: "Tienes el producto. Tienes el precio. Pero el correo nunca llega a quien decide." },
       { type: "p", text: "Ese es el muro real del canal corporativo: no la oferta, sino el acceso." },
@@ -206,6 +222,10 @@ export const posts: Post[] = [
       label: "Descubre cómo estructuramos tu crecimiento comercial",
       href: "/como-aumentar-ventas-b2b-ecuador",
     },
+    alsoSee: [
+      { label: "Consultoría comercial B2B en Quito", href: "/consultoria-comercial-b2b-quito" },
+      { label: "Alianzas estratégicas B2B en Ecuador", href: "/alianzas-estrategicas-b2b-ecuador" },
+    ],
     body: [
       { type: "p", text: "Cuando las ventas se estancan, la reacción típica es contratar más vendedores." },
       { type: "p", text: "Casi nunca es la solución." },

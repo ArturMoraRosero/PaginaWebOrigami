@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
@@ -37,11 +38,11 @@ export default function Footer() {
             {t.footer.b2bHeading}
           </span>
           <div className="flex flex-col space-y-3 font-sans text-sm text-white/60">
-            <a href="/acceso-canal-corporativo-b2b-ecuador" className="hover:text-green transition-colors w-fit">{t.footer.links.corporateChannel}</a>
-            <a href="/consultoria-comercial-b2b-quito" className="hover:text-green transition-colors w-fit">{t.footer.links.commercialConsulting}</a>
-            <a href="/estrategia-de-ventas-b2b-ecuador" className="hover:text-green transition-colors w-fit">{t.footer.links.salesStrategy}</a>
-            <a href="/alianzas-estrategicas-b2b-ecuador" className="hover:text-green transition-colors w-fit">{t.footer.links.strategicAlliances}</a>
-            <a href="/como-aumentar-ventas-b2b-ecuador" className="hover:text-green transition-colors w-fit">{t.footer.links.increaseSales}</a>
+            <Link href="/acceso-canal-corporativo-b2b-ecuador" className="hover:text-green transition-colors w-fit">{t.footer.links.corporateChannel}</Link>
+            <Link href="/consultoria-comercial-b2b-quito" className="hover:text-green transition-colors w-fit">{t.footer.links.commercialConsulting}</Link>
+            <Link href="/estrategia-de-ventas-b2b-ecuador" className="hover:text-green transition-colors w-fit">{t.footer.links.salesStrategy}</Link>
+            <Link href="/alianzas-estrategicas-b2b-ecuador" className="hover:text-green transition-colors w-fit">{t.footer.links.strategicAlliances}</Link>
+            <Link href="/como-aumentar-ventas-b2b-ecuador" className="hover:text-green transition-colors w-fit">{t.footer.links.increaseSales}</Link>
           </div>
         </nav>
 
@@ -51,12 +52,12 @@ export default function Footer() {
             {t.footer.navHeading}
           </span>
           <div className="flex flex-col space-y-3 font-sans text-sm text-white/60">
-            <a href="/nosotros" className="hover:text-green transition-colors w-fit">{t.footer.links.about}</a>
-            <a href="#practica" className="hover:text-green transition-colors w-fit">{t.footer.links.services}</a>
-            <a href="#modelo" className="hover:text-green transition-colors w-fit">{t.footer.links.methodology}</a>
-            <a href="/insights" className="hover:text-green transition-colors w-fit">Insights</a>
-            <a href="/valoracion" className="hover:text-green transition-colors w-fit">{t.footer.links.valuation}</a>
-            <a href="#contacto" className="hover:text-green transition-colors w-fit">{t.footer.links.contact}</a>
+            <Link href="/nosotros" className="hover:text-green transition-colors w-fit">{t.footer.links.about}</Link>
+            <Link href="/#practica" className="hover:text-green transition-colors w-fit">{t.footer.links.services}</Link>
+            <Link href="/#modelo" className="hover:text-green transition-colors w-fit">{t.footer.links.methodology}</Link>
+            <Link href="/insights" className="hover:text-green transition-colors w-fit">Insights</Link>
+            <Link href="/valoracion" className="hover:text-green transition-colors w-fit">{t.footer.links.valuation}</Link>
+            <Link href="/#contacto" className="hover:text-green transition-colors w-fit">{t.footer.links.contact}</Link>
             <div className="flex items-center gap-4 mt-3 pt-4 border-t border-white/10">
               <a
                 href="https://www.linkedin.com/company/origami-consulting-group-sas/"

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowLeft, MessageCircle } from "lucide-react";
@@ -17,12 +18,12 @@ export default function ArticleView({ post }: { post: Post }) {
       <article className="relative z-10 pt-36 md:pt-44 pb-24 px-6">
         <div className="max-w-3xl mx-auto">
           {/* Back link */}
-          <a
+          <Link
             href="/insights"
             className="inline-flex items-center gap-2 text-navy/50 hover:text-green transition-colors text-sm font-medium mb-10"
           >
             <ArrowLeft className="w-4 h-4" /> Volver a Insights
-          </a>
+          </Link>
 
           {/* Header */}
           <motion.div
@@ -100,24 +101,53 @@ export default function ArticleView({ post }: { post: Post }) {
                   {post.related.label}
                 </p>
               </div>
-              <a
+              <Link
                 href={post.related.href}
                 className="shrink-0 inline-flex items-center gap-2 bg-green text-navy px-7 py-3.5 rounded-full font-bold tracking-wide hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(125,194,66,0.35)] transition-all"
               >
                 Ver servicio
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
           </div>
 
+          {/* Enlaces secundarios a otros servicios (reparto de autoridad interna) */}
+          {post.alsoSee && post.alsoSee.length > 0 && (
+            <div className="mt-10">
+              <p className="font-syne font-bold uppercase tracking-[0.15em] text-xs text-navy/40 mb-4">
+                También puede interesarle
+              </p>
+              <ul className="divide-y divide-navy/10 border-t border-b border-navy/10">
+                {post.alsoSee.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="group flex items-baseline justify-between gap-6 py-4"
+                    >
+                      <span className="font-syne font-bold text-base text-navy transition-colors group-hover:text-green">
+                        {link.label}
+                      </span>
+                      <span
+                        aria-hidden="true"
+                        className="text-green shrink-0 transition-transform duration-300 group-hover:translate-x-1"
+                      >
+                        &rarr;
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           {/* Contact nudge */}
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
-            <a
+            <Link
               href="/#contacto"
               className="bg-navy text-white px-8 py-4 rounded-full font-bold tracking-wide hover:bg-navy/90 transition-all text-center"
             >
               Iniciar una conversación
-            </a>
+            </Link>
             <a
               href="https://wa.me/593984180800"
               target="_blank"
