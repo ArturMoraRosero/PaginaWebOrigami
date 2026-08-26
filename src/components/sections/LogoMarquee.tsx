@@ -20,6 +20,7 @@ const LOGOS: Logo[] = [
   { name: "CLICKHOME", src: "/logos/clickhome.png", treatment: "invert" },
   { name: "METALTRONIC GROUP", src: "/logos/metaltronic.png", treatment: "invert" },
   { name: "HIPERTRONICS", src: "/logos/hipertronics.png", treatment: "invert", wide: true },
+  { name: "BKO", src: "/logos/bko.png", treatment: "original" },
 ];
 
 // Los hovers se limitan a dispositivos con puntero real: en táctil el :hover
