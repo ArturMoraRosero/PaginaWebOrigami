@@ -75,6 +75,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="scroll-smooth">
+      <head>
+        <link rel="preconnect" href="https://d8j0ntlcm91z4.cloudfront.net" />
+      </head>
       <body className={`${syne.variable} ${inter.variable} font-sans`}>
         <LanguageProvider>
           <CustomCursor />

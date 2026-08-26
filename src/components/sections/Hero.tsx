@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-import OrigamiGiraffe from "@/components/ui/OrigamiGiraffe";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Hero() {
@@ -41,8 +40,34 @@ export default function Hero() {
         </svg>
       </motion.div>
 
-      {/* 2. Content */}
-      <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 pb-20">
+      {/* 2. Video — right side, mask-blended seamlessly */}
+      <div className="absolute inset-0 z-[2] pointer-events-none overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260806_132328_5f9029c8-218f-4489-82b6-29ff2849920e.png"
+          className="absolute top-0 right-0 w-full h-full object-cover object-center"
+          style={{
+            WebkitMaskImage: "linear-gradient(to right, transparent 15%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.7) 45%, black 60%)",
+            maskImage: "linear-gradient(to right, transparent 15%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.7) 45%, black 60%)"
+          }}
+        >
+          <source
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260806_133255_956f653f-5d80-4b06-abd5-0f46c98b60fa.mp4"
+            type="video/mp4"
+          />
+        </video>
+        {/* Bottom fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-36 z-10 bg-gradient-to-t from-[#0A1628] to-transparent" />
+        {/* Top subtle fade */}
+        <div className="absolute top-0 left-0 right-0 h-20 z-10 bg-gradient-to-b from-[#0D1B35]/40 to-transparent" />
+      </div>
+
+      {/* 3. Content */}
+      <div className="relative w-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 pb-20 z-10">
         
         {/* Left: Text Content */}
         <div className="w-full max-w-[680px] relative z-20 text-center lg:text-left mt-10 md:mt-0">
@@ -120,20 +145,9 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right: Origami Giraffe Component */}
-        <div className="w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[500px] lg:w-1/2 flex justify-center lg:justify-end relative xl:scale-110 z-10 pt-10 lg:pt-0">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut", delay: 0.4 }}
-            className="w-full h-auto max-h-[50vh] xl:max-h-[70vh] aspect-[140/220]"
-          >
-            <OrigamiGiraffe className="w-full h-full object-contain" />
-          </motion.div>
-        </div>
       </div>
 
-      {/* 3. Bottom Gradient Fade */}
+      {/* 4. Bottom Gradient Fade */}
       <div className="absolute bottom-0 w-full h-24 bg-gradient-to-b from-transparent to-[#0A1628] z-[5] pointer-events-none" />
 
     </section>
