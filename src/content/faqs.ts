@@ -131,3 +131,26 @@ export const faqsAumentarVentas: Faq[] = [
     a: "Cambiando el criterio de comparación. Mientras la conversación gire sobre el producto, el comprador compara precio. Cuando gira sobre el costo total, el riesgo de operación o el indicador que esa gerencia debe cumplir, la comparación cambia y el precio deja de ser la única variable. Esto exige una propuesta de valor construida por segmento, no un descuento.",
   },
 ];
+
+export const faqsRedisenoComercial: Faq[] = [
+  {
+    q: "¿Por qué mi equipo comercial no cumple la meta aunque trabaja duro?",
+    a: "Casi siempre porque el problema es de estructura, no de esfuerzo. Sin roles claros, un proceso definido por etapas y un sistema de incentivos que refuerce el comportamiento correcto, el resultado depende de la voluntad individual de cada vendedor, y eso no escala ni se repite mes a mes. Rediseñar el sistema comercial ataca la causa; exigir más esfuerzo solo la pospone.",
+  },
+  {
+    q: "¿En qué se diferencia rediseñar el sistema comercial de una capacitación de ventas?",
+    a: "La capacitación mejora habilidades individuales dentro de la estructura que ya existe. El rediseño del sistema comercial cambia la estructura misma: quién vende qué, con qué proceso y bajo qué incentivos. Si la estructura está rota, entrenar mejor a los vendedores no corrige el problema, solo lo retrasa.",
+  },
+  {
+    q: "¿Cómo se estructura un equipo comercial B2B en Ecuador?",
+    a: "Se estructura en tres capas: roles y territorios (quién vende qué, a quién), proceso comercial (etapas, criterios de paso y cadencia de seguimiento) y sistema de incentivos (metas y comisiones alineadas con el comportamiento que se quiere reforzar, no solo con el cierre). Las tres capas se diseñan juntas: cambiar una sin las otras dos genera fricción.",
+  },
+  {
+    q: "¿Cuándo conviene rediseñar el sistema comercial en lugar de contratar más vendedores?",
+    a: "Conviene antes de contratar, no después. Sumar vendedores a un proceso sin diseño multiplica la inconsistencia que ya existe: cada persona nueva aprende a vender a su manera, porque no hay un sistema que seguir. Rediseñar primero la estructura hace que cada contratación posterior sea más rápida de integrar y más predecible en resultado.",
+  },
+  {
+    q: "¿Cuánto cuesta rediseñar el sistema comercial de una empresa en Ecuador?",
+    a: "Depende del tamaño del equipo y de cuántas de las tres capas (roles, proceso, incentivos) requieren rediseño completo frente a ajuste. Origami cotiza por proyecto con hitos o por retainer mensual, después de un diagnóstico estructural inicial que define el alcance real.",
+  },
+];

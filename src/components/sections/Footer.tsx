@@ -43,6 +43,7 @@ export default function Footer() {
             <Link href="/estrategia-de-ventas-b2b-ecuador" className="hover:text-green transition-colors w-fit">{t.footer.links.salesStrategy}</Link>
             <Link href="/alianzas-estrategicas-b2b-ecuador" className="hover:text-green transition-colors w-fit">{t.footer.links.strategicAlliances}</Link>
             <Link href="/como-aumentar-ventas-b2b-ecuador" className="hover:text-green transition-colors w-fit">{t.footer.links.increaseSales}</Link>
+            <Link href="/rediseno-sistema-comercial-ecuador" className="hover:text-green transition-colors w-fit">{t.footer.links.teamRedesign}</Link>
           </div>
         </nav>
 

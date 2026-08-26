@@ -202,6 +202,7 @@ export const dictionaries = {
         salesStrategy: "Estrategia de Ventas B2B",
         strategicAlliances: "Alianzas Estratégicas",
         increaseSales: "Cómo Aumentar Ventas",
+        teamRedesign: "Rediseño del Sistema Comercial",
         valuation: "Valoración Clientes",
         contact: "Contacto"
       }
@@ -410,6 +411,7 @@ export const dictionaries = {
         salesStrategy: "B2B Sales Strategy",
         strategicAlliances: "Strategic Alliances",
         increaseSales: "How to Increase Sales",
+        teamRedesign: "Sales Team Redesign",
         valuation: "Client Valuation",
         contact: "Contact"
       }

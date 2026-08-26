@@ -52,6 +52,11 @@ const L = {
     href: "/acceso-canal-corporativo-b2b-ecuador",
     desc: "Conectamos su oferta con los tomadores de decisión de las grandes empresas del país.",
   },
+  rediseno: {
+    label: "Rediseño del sistema comercial en Ecuador",
+    href: "/rediseno-sistema-comercial-ecuador",
+    desc: "Estructura de roles, proceso comercial e incentivos para equipos B2B. No es capacitación.",
+  },
 } as const satisfies Record<string, RelatedLink>;
 
 const I = {
@@ -75,11 +80,15 @@ const I = {
 /** Enlaces relacionados por ruta de landing (sin barra final). */
 export const relatedByPath: Record<string, RelatedGroup> = {
   "/consultoria-comercial-b2b-quito": {
-    services: [L.estrategia, L.canal],
+    services: [L.estrategia, L.canal, L.rediseno],
     insights: [I.sinVendedores],
   },
   "/estrategia-de-ventas-b2b-ecuador": {
-    services: [L.quito, L.aumentar],
+    services: [L.quito, L.aumentar, L.rediseno],
+    insights: [I.sinVendedores],
+  },
+  "/rediseno-sistema-comercial-ecuador": {
+    services: [L.quito, L.estrategia],
     insights: [I.sinVendedores],
   },
   "/alianzas-estrategicas-b2b-ecuador": {
