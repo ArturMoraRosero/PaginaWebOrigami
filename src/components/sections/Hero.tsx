@@ -1,21 +1,12 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Hero() {
   const { t } = useLanguage();
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"],
-  });
-
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-
   const headlineLines = t.hero.headline;
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -40,25 +31,12 @@ export default function Hero() {
 
   return (
     <section
-      ref={containerRef}
       className="relative min-h-screen w-full flex items-center bg-[radial-gradient(circle_at_center,#1E3D7A,#0D1B35)] overflow-hidden pt-36 md:pt-40"
     >
-      {/* 1. Animated Geometric Background & Noise */}
-      <motion.div
-        className="absolute inset-0 z-0 pointer-events-none"
-        style={{ y: backgroundY, opacity }}
-      >
+      {/* 1. Noise texture only */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-[0.03] mix-blend-overlay"></div>
-
-        {/* Abstract Polygons */}
-        <div className="absolute top-1/4 right-1/4 w-[600px] h-[600px] border border-white/5 rounded-full animate-[spin_120s_linear_infinite]" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[800px] h-[800px] border border-green/5 rounded-full animate-[spin_90s_linear_infinite_reverse]" />
-
-        {/* SVG Polygon Shape */}
-        <svg className="absolute top-[20%] right-[10%] w-[400px] h-[400px] text-white/[0.04] animate-[spin_60s_linear_infinite]" viewBox="0 0 100 100">
-          <polygon points="50,0 100,25 100,75 50,100 0,75 0,25" fill="currentColor" />
-        </svg>
-      </motion.div>
+      </div>
 
       {/* 2. Video — right side, mask-blended seamlessly */}
       <div className="absolute inset-0 z-[2] pointer-events-none overflow-hidden">
