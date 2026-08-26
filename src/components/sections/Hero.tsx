@@ -46,7 +46,7 @@ export default function Hero() {
           loop
           playsInline
           ref={videoRef}
-          preload="auto"
+          preload="none"
           poster="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260806_132328_5f9029c8-218f-4489-82b6-29ff2849920e.png"
           className="absolute top-0 right-0 w-full h-full object-cover object-center"
           style={{
