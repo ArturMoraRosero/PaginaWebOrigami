@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import { useLanguage } from "@/context/LanguageContext";
@@ -17,6 +17,26 @@ export default function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   const headlineLines = t.hero.headline;
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = true;
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Retry on first user interaction
+        const handleInteraction = () => {
+          video.play();
+          document.removeEventListener("touchstart", handleInteraction);
+          document.removeEventListener("click", handleInteraction);
+        };
+        document.addEventListener("touchstart", handleInteraction, { once: true });
+        document.addEventListener("click", handleInteraction, { once: true });
+      });
+    }
+  }, []);
 
   return (
     <section
@@ -47,6 +67,7 @@ export default function Hero() {
           muted
           loop
           playsInline
+          ref={videoRef}
           preload="auto"
           poster="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260806_132328_5f9029c8-218f-4489-82b6-29ff2849920e.png"
           className="absolute top-0 right-0 w-full h-full object-cover object-center"
