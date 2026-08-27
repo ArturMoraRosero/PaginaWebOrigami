@@ -33,6 +33,7 @@ export default function FloatingWhatsApp() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Enviar mensaje por WhatsApp"
         className="relative group interactive flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-green text-navy shadow-[0_4px_20px_rgba(125,194,66,0.3)] hover:shadow-[0_4px_30px_rgba(125,194,66,0.6)] transition-shadow duration-300"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
