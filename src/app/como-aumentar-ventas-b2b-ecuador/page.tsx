@@ -215,7 +215,7 @@ export default function B2BSalesBlogPage() {
               <div className="mt-20">
                  <p className="text-navy/50 font-bold tracking-widest uppercase mb-8">Nuestros Servicios de Consultoría</p>
                  <div className="flex flex-col sm:flex-row justify-center gap-6">
-                    <a href="https://wa.me/593984180800" target="_blank" className="flex items-center justify-center gap-2 bg-green text-navy px-10 py-5 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all">
+                    <a href="https://wa.me/593985141999" target="_blank" className="flex items-center justify-center gap-2 bg-green text-navy px-10 py-5 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all">
                        <MessageCircle className="w-6 h-6" />
                        Hablar con un Experto
                     </a>

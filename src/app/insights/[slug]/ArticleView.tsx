@@ -149,7 +149,7 @@ export default function ArticleView({ post }: { post: Post }) {
               Iniciar una conversación
             </Link>
             <a
-              href="https://wa.me/593984180800"
+              href="https://wa.me/593985141999"
               target="_blank"
               className="flex items-center justify-center gap-2 bg-white border border-navy/10 text-navy px-8 py-4 rounded-full font-medium hover:border-green transition-all"
             >

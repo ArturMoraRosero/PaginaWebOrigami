@@ -144,7 +144,7 @@ export default function RedisenoSistemaComercialPage() {
               <a href="#contacto" className="bg-green text-navy px-9 py-4 rounded-full font-bold tracking-wide hover:scale-[1.03] transition-all duration-300 text-center">
                 Agendar Asesoría
               </a>
-              <a href="https://wa.me/593984180800" target="_blank" className="flex items-center justify-center gap-2 bg-white border border-navy/10 text-navy px-9 py-4 rounded-full font-medium hover:border-green transition-all duration-300">
+              <a href="https://wa.me/593985141999" target="_blank" className="flex items-center justify-center gap-2 bg-white border border-navy/10 text-navy px-9 py-4 rounded-full font-medium hover:border-green transition-all duration-300">
                 <MessageCircle className="w-5 h-5" />
                 WhatsApp
               </a>

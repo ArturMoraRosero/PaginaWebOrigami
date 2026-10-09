@@ -77,6 +77,12 @@ export default function RootLayout({
     <html lang="es" className="scroll-smooth">
       <head>
         <link rel="preconnect" href="https://d8j0ntlcm91z4.cloudfront.net" />
+        <link
+          rel="preload"
+          as="image"
+          href="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260806_132328_5f9029c8-218f-4489-82b6-29ff2849920e.png"
+          fetchPriority="high"
+        />
       </head>
       <body className={`${syne.variable} ${inter.variable} font-sans`}>
         <LanguageProvider>
