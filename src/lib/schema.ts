@@ -82,6 +82,7 @@ export const organizationSchema = {
   sameAs: [
     'https://www.linkedin.com/company/origami-consulting-group-sas/',
     'https://www.instagram.com/origamiconsultingroup/',
+    'https://www.sortlist.com/agency/origami-consulting-group',
     'https://www.google.com/maps/place/Origami+Consulting+Group/@-0.170315,-78.4682598,17z/data=!4m6!3m5!1s0x28c5890088e600f1:0xfea273f245a53f9c',
   ],
   hasOfferCatalog: {

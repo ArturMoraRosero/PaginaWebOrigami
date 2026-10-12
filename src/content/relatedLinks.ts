@@ -75,21 +75,36 @@ const I = {
     href: "/insights/aumentar-ventas-b2b-sin-contratar-vendedores",
     desc: "Primero la estructura. Después el equipo. Nunca al revés.",
   },
+  noCumpleMeta: {
+    label: "Por qué su equipo comercial no cumple la meta",
+    href: "/insights/por-que-el-equipo-comercial-no-cumple-la-meta",
+    desc: "Las cuatro causas estructurales detrás de una meta incumplida mes tras mes.",
+  },
+  estructurarEquipo: {
+    label: "Cómo estructurar un equipo comercial B2B en Ecuador",
+    href: "/insights/como-estructurar-un-equipo-comercial-b2b-en-ecuador",
+    desc: "Roles y territorios, proceso comercial e incentivos: qué decidir y en qué orden.",
+  },
+  incentivos: {
+    label: "Incentivos comerciales que sí funcionan en ventas B2B",
+    href: "/insights/incentivos-comerciales-que-si-funcionan-b2b",
+    desc: "Por qué la comisión pura por cierre falla en B2B y qué pagar en su lugar.",
+  },
 } as const satisfies Record<string, RelatedLink>;
 
 /** Enlaces relacionados por ruta de landing (sin barra final). */
 export const relatedByPath: Record<string, RelatedGroup> = {
   "/consultoria-comercial-b2b-quito": {
     services: [L.estrategia, L.canal, L.rediseno],
-    insights: [I.sinVendedores],
+    insights: [I.noCumpleMeta, I.sinVendedores],
   },
   "/estrategia-de-ventas-b2b-ecuador": {
     services: [L.quito, L.aumentar, L.rediseno],
-    insights: [I.sinVendedores],
+    insights: [I.estructurarEquipo, I.incentivos],
   },
   "/rediseno-sistema-comercial-ecuador": {
     services: [L.quito, L.estrategia],
-    insights: [I.sinVendedores],
+    insights: [I.noCumpleMeta, I.estructurarEquipo, I.incentivos],
   },
   "/alianzas-estrategicas-b2b-ecuador": {
     services: [L.canal, L.quito],
@@ -97,7 +112,7 @@ export const relatedByPath: Record<string, RelatedGroup> = {
   },
   "/como-aumentar-ventas-b2b-ecuador": {
     services: [L.estrategia, L.alianzas],
-    insights: [I.gerentes],
+    insights: [I.gerentes, I.estructurarEquipo],
   },
   "/acceso-canal-corporativo-b2b-ecuador": {
     services: [L.alianzas, L.quito],
